@@ -1,1 +1,28 @@
 // Specific CSS for your home-page
+section {
+  width: 414px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  overflow-y: hidden;
+  &:hover {
+    overflow-y: scroll;
+  }
+}
+
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+
+@media(max-width: 992px) {
+  grid-template-columns: 1fr 1fr;
+}
+@media(max-width: 768px) {
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1200px) {
+  grid-template-columns: 1fr 1fr 1fr;
+ }
