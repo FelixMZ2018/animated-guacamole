@@ -37,7 +37,7 @@ body {
     top: 0; left: 0;
     height: 100vh; width: 100%;
     visibility: hidden;
-    background-color: #02A8F3;
+    background-color: #d8a649;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,10 +46,9 @@ body {
     font-family: Helvetica, sans-serif;
 
     .title {
-      font-size: 24px;
+      font-size: 40px;
       margin-bottom: 16px;
     }
-
 
     > * {
       opacity: 0;
@@ -57,11 +56,11 @@ body {
     }
 
     &.step-2 {
-      background-color: darken(#02A8F3, 10%);
+      background-color: darken(#d8a649, 10%);
     }
 
     &.step-3 {
-      background-color: darken(#02A8F3, 20%);
+      background-color: darken(#d8a649, 20%);
     }
 
 
@@ -124,11 +123,12 @@ body {
       bottom: 47px;
       left: 50%;
       transform: translateX(-50%);
-      border-radius: 50%;
+      border-radius: 3px;
       padding: 8px;
-      background-color: white;
+      background-color: $orange;
       box-shadow: 0 1px 0 black;
       z-index: 3;
+      color: white;
 
         &.animating {
           animation: animating 1s linear;
@@ -154,4 +154,7 @@ body {
           }
         }
     }
+}
+h2 {
+  font-size: 24px;
 }
