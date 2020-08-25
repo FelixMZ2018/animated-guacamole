@@ -1,2 +1,40 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="vertical-form-container">
+  <div class="vertical-form">
+    <div class="step active">
+      <div class="title">Mar°C</div>
+      <div class="content">
+        <h2>Your most accurate weather forecast in one place</h2>
+        <p>Manage your personal preference for each temperature range</p>
+        <br>
+        <div class="button">
+          <%= link_to "Get started", new_user_registration_path, class: "btn btn-light" %>
+          <br>
+          <br>
+          <%= link_to "Login", new_user_session_path %>
+       </div>
+      </div>
+    </div>
+
+
+    <div class="step step-2 next">
+      <div class="title">Create your Profile</div>
+      <div class="content">
+        <div class="avatar d-flex">
+          <p>You can make changes in settings</p>
+          <%= image_tag("woman.svg", :alt => "woman") %>
+          <%= image_tag("man.svg", :alt => "man") %>
+        </div>
+      </div>
+    </div>
+
+    <div class="step step-3">
+      <div class="title">Allow location access</div>
+        <div class="content">
+          <%= image_tag("location.svg", :alt => "location") %>
+          <p>Allow Mar℃ to use your current location to deliver notifications for your personalized weather forcast.</p>
+        </div>
+      </div>
+      <i class="material-icons">Continue</i>
+    </div>
+  </div>
+</div>
