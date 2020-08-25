@@ -5,6 +5,7 @@ section {
   border: 1px solid #ccc;
   border-radius: 30px;
   overflow-y: hidden;
+  background-color: white;
   &:hover {
     overflow-y: scroll;
   }
@@ -26,3 +27,4 @@ section {
 @media (min-width: 1200px) {
   grid-template-columns: 1fr 1fr 1fr;
  }
+
