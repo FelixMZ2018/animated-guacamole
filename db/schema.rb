@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_144737) do
+ActiveRecord::Schema.define(version: 2020_08_25_115208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "user_preferences", force: :cascade do |t|
+    t.string "default_address"
+    t.string "address"
+    t.integer "user_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.text "forecast"
+    t.datetime "forecast_timestamp"
+    t.index ["user_id"], name: "index_user_preferences_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
