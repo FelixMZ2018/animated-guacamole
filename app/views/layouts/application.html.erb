@@ -12,9 +12,15 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <br>
+    <p class="d-flex justify-content-center">This is a mobile app</p>
+    <div id="page-container" class="d-flex justify-content-center pt-2">
+      <section>
+        <%= render 'shared/navbar' %>
+        <%= render 'shared/flashes' %>
 
-    <%= yield %>
+        <%= yield %>
+    </section>
+  </div>
   </body>
 </html>

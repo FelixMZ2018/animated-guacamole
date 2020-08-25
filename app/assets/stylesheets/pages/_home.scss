@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+section {
+  height: 667px;
+  width: 375px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  overflow-y: hidden;
+  &:hover {
+    overflow-y: scroll;
+  }
+}
+
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
