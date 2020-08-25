@@ -13,9 +13,9 @@ body {
   &:after {
     content: ' ';
     position: absolute;
-    top: calc(100% + 5px); left: 0;
+    top: calc(100% + 0.3em); left: 0;
     display: inline-block;
-    height: 30px; width: 100%;
+    height: 1.8em; width: 100%;
     background-color: rgba(0,0,0,.25);
     border-radius: 50%;
     filter: blur(10px);
@@ -30,7 +30,7 @@ body {
   background-color: #eee;
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0.6em;
 
   .step {
     position: absolute;
@@ -47,7 +47,7 @@ body {
 
     .title {
       font-size: 40px;
-      margin-bottom: 16px;
+      margin-bottom: 1em;
     }
 
     > * {
@@ -61,6 +61,12 @@ body {
 
     &.step-3 {
       background-color: darken(#d8a649, 20%);
+    }
+      &.step-4 {
+      background-color: darken(#d8a649, 25%);
+    }
+      &.step-5 {
+      background-color: darken(#d8a649, 30%);
     }
 
 
@@ -120,7 +126,7 @@ body {
 
       i {
       position: absolute;
-      bottom: 47px;
+      bottom: 3em;
       left: 50%;
       transform: translateX(-50%);
       border-radius: 3px;
