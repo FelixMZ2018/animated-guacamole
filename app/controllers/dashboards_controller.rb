@@ -9,18 +9,25 @@ class DashboardsController < ApplicationController
         @forecast_hourly = []
         count = 2 
         @forecast['hourly'].each do |forecast|
-            count = count + 1 
+            count += 1 
             if count == 3
                 @forecast_hourly << forecast
                 count = 0
             end
         end
         @forecast_daily = @forecast['daily']
+    end
+   
+    def forecast
+        @user = current_user
+        @forecast = api_call()
+        @forecast_current = @forecast['current']
+
+    end
 
 
         
 
-    end
 
     private
 
