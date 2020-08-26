@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 
 
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -24,11 +25,17 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import 'nouislider';
+import 'nouislider/distribute/nouislider.css';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { allowLocation } from '../components/allow_location';
+
 
 document.addEventListener('turbolinks:load', () => {
+  allowLocation();
+
   $('i').on('click', function(){
 
   if($(this).text() == 'done'){
@@ -59,7 +66,8 @@ document.addEventListener('turbolinks:load', () => {
 })
 
 
-Resources
+
+// Resources
   // Call your functions here, e.g:
   // initSelect2();
 });
