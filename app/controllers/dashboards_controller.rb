@@ -16,12 +16,16 @@ class DashboardsController < ApplicationController
             end
         end
         @forecast_daily = @forecast['daily']
-
-
-        
-
     end
 
+    def forecast
+        @user = current_user
+        @forecast = api_call()
+        @forecast_hourly = @forecast['hourly']
+        @forecast_daily = @forecast['daily']
+
+
+    end
     private
 
     def api_call
