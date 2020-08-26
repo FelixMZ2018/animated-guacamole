@@ -1,7 +1,9 @@
 <div class="vertical-form-container">
   <div class="vertical-form">
-    <div class="step active">
+
+    <div class="step active text-center">
       <div class="title">Mar°C</div>
+      <br>
       <div class="content">
         <h2>Your most accurate weather forecast in one place</h2>
         <p>Manage your personal preference for each temperature range</p>
@@ -15,26 +17,44 @@
       </div>
     </div>
 
-
     <div class="step step-2 next">
       <div class="title">Create your Profile</div>
       <div class="content">
-        <div class="avatar d-flex">
-          <p>You can make changes in settings</p>
-          <%= image_tag("woman.svg", :alt => "woman") %>
-          <%= image_tag("man.svg", :alt => "man") %>
+        <p>You can make changes in settings</p>
+        <div class="col-sm d-flex">
+          <div class="row">
+            <%= image_tag("woman.svg", :alt => "woman", class: "avatar-img") %>
+          </div>
+          <div class="row">
+            <%= image_tag("man.svg", :alt => "man", class: "avatar-img") %>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="step step-3">
+    <div class="step step-3 next text-center">
       <div class="title">Allow location access</div>
-        <div class="content">
+      <br>
+        <div class="content text-center">
           <%= image_tag("location.svg", :alt => "location") %>
+          <br>
+          <br>
           <p>Allow Mar℃ to use your current location to deliver notifications for your personalized weather forcast.</p>
         </div>
+    </div>
+
+    <div class="step step-4 next text-center">
+      <div class="title">Set the notification time</div>
+    </div>
+
+    <div class="step step-5 text-center">
+      <div class="title">Temperatur</div>
+      <p>Set your personal preference for each temperature range</p>
+      <div class="temperature-set">
       </div>
-      <i class="material-icons">Continue</i>
+    </div>
+
+    <i class="material-icons">Continue</i>
     </div>
   </div>
 </div>
