@@ -13,9 +13,9 @@ body {
   &:after {
     content: ' ';
     position: absolute;
-    top: calc(100% + 5px); left: 0;
+    top: calc(100% + 0.3em); left: 0;
     display: inline-block;
-    height: 30px; width: 100%;
+    height: 1.8em; width: 100%;
     background-color: rgba(0,0,0,.25);
     border-radius: 50%;
     filter: blur(10px);
@@ -30,26 +30,25 @@ body {
   background-color: #eee;
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0.6em;
 
   .step {
     position: absolute;
     top: 0; left: 0;
     height: 100vh; width: 100%;
     visibility: hidden;
-    background-color: #02A8F3;
+     background-image: url("sunny.jpg");
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: black;
     font-family: Helvetica, sans-serif;
 
     .title {
-      font-size: 24px;
-      margin-bottom: 16px;
+      font-size: 40px;
+      margin-bottom: 1em;
     }
-
 
     > * {
       opacity: 0;
@@ -57,11 +56,17 @@ body {
     }
 
     &.step-2 {
-      background-color: darken(#02A8F3, 10%);
+      background-color: darken(#d8a649, 10%);
     }
 
     &.step-3 {
-      background-color: darken(#02A8F3, 20%);
+      background-color: darken(#d8a649, 20%);
+    }
+      &.step-4 {
+      background-color: darken(#d8a649, 25%);
+    }
+      &.step-5 {
+      background-color: darken(#d8a649, 30%);
     }
 
 
@@ -121,14 +126,15 @@ body {
 
       i {
       position: absolute;
-      bottom: 47px;
+      bottom: 3em;
       left: 50%;
       transform: translateX(-50%);
-      border-radius: 50%;
+      border-radius: 3px;
       padding: 8px;
-      background-color: white;
+      background-color: $orange;
       box-shadow: 0 1px 0 black;
       z-index: 3;
+      color: white;
 
         &.animating {
           animation: animating 1s linear;
@@ -154,4 +160,7 @@ body {
           }
         }
     }
+}
+h2 {
+  font-size: 24px;
 }

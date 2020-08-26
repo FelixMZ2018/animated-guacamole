@@ -36,6 +36,7 @@ import { allowLocation } from '../components/allow_location';
 document.addEventListener('turbolinks:load', () => {
   allowLocation();
 
+
   $('i').on('click', function(){
 
   if($(this).text() == 'done'){
@@ -62,9 +63,7 @@ document.addEventListener('turbolinks:load', () => {
     }
 
   })
-
 })
-
 
 
 // Resources

@@ -11,6 +11,14 @@ section {
   }
 }
 
+.avatar-img {
+  height: 100px;
+}
+
+.col-sm {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 #page-container {
   position: relative;
