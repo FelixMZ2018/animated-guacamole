@@ -65,3 +65,6 @@ gem 'geocoder'
 # adding geocoding 
 gem 'swiper-rails'
 # adding swiper 
+
+
+gem 'open-uri'
