@@ -28,11 +28,9 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
  import { initSlider } from '../plugins/init_slider';
- import { initWeather } from '../plugins/init_weather';
 
 document.addEventListener('turbolinks:load', () => {
   initSlider();
   // Call your functions here, e.g:
   // initSelect2();
-  initWeather();
 });
