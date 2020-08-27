@@ -9,7 +9,7 @@
   <%= f.input :city, label: "Your location"%>
   <br>
   <br>
-  <%= f.input :avatar, label: "Choose your avatar"%>
+  <%= f.input :avatar, label: "Choose your avatar", as: :radio_buttons, collection: [['female', 'female'], ['male', 'male']], label_method: :second, value_method: :first %>
   <br>
   <br>
   <h3>Temperature</h3>
@@ -22,4 +22,5 @@
     <%= f.button :submit, "Save", class: "btn btn-danger mb-2"%>
   <%end%>
 </div>
+
 
