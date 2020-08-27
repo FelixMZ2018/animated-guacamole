@@ -25,6 +25,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { temperatureSlider } from '../plugins/init_noUiSlider';
 import 'nouislider';
 import 'nouislider/distribute/nouislider.css';
 
@@ -36,6 +37,8 @@ import { allowLocation } from '../components/allow_location';
 document.addEventListener('turbolinks:load', () => {
   allowLocation();
 
+
+  temperatureSlider();
 
   $('i').on('click', function(){
 
@@ -64,7 +67,6 @@ document.addEventListener('turbolinks:load', () => {
 
   })
 })
-
 
 // Resources
   // Call your functions here, e.g:
