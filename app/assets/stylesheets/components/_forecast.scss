@@ -28,17 +28,13 @@ h4 {
   font-size: 1em;
 }
 
-
 .hourly {
   justify-content: center;
-  width: 100%;
-  overflow: hidden;
-  margin-top: 4.5%;
-  padding-top: 1%;
+  padding: 1em;
 }
 
 #bg-img {
-  background-image: url("https://images.unsplash.com/photo-1522441815192-d9f04eb0615c?ixlib=rb-1.2.1&auto=format&fit=crop&w=564&q=80");
+  background-image: url("https://uc582aa6778faa4f19cd88a854f9.previews.dropboxusercontent.com/p/orig/AA4CV4tWcJ4rbqGaM8_0nm6oeYw3k3EhJLFiy9LrK8SuGGbQQAIdTMFuAevbV6oFJLuofPAX6abXBfetMhQq3_q-sB3IAK_CAvVSDAI3TEFiY-gMfICPjJvxvElUer7KBgYCA3y-n23WIGYA4K5dbpCDM13YlNjwjHzCetjVyJXQsJj_FxEOSzUq6GEfA2lQwnBGzRH2lL0dF2d9B-pcfH5gmtteqEeywbgMCR-szbtDS4nR8c2O0kxgG5HyEHNTgO-8R_pLlvwTx7cXnyvlFIO9CpPDDCZMwle45P-2usXZIX2nohoK01qr5D5EX8gbhfc/p.svg?fv_content=true&size_mode=5");
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -65,6 +61,10 @@ h4 {
   font-weight: bold;
 }
 
+#currentLocation,
+#currentDate {
+  text-align: left;
+}
 
 #currentWeather {
   font-size: 1.25rem;
@@ -86,7 +86,7 @@ h4 {
   width: 100%;
   overflow: hidden;
   margin-top: 3.5%;
-  padding: 1em;
+  padding-left: 7px;
 }
 
 #parameters ul li {
@@ -99,18 +99,18 @@ h4 {
   float: left;
 }
 
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 23px;
+  margin-bottom: 7px;
 }
+
+.toggle input {
+  display: none;
+}
+
 
 
 
