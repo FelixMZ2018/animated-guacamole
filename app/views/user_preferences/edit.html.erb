@@ -1,1 +1,25 @@
-<%raise%>
+
+<div class="container-sm">
+  <h3>Edit your profile</h3>
+  <br>
+  <%= simple_form_for @user_preference do |f| %>
+  <%= f.input :name, label: "Name"%>
+  <br>
+  <br>
+  <%= f.input :city, label: "Your location"%>
+  <br>
+  <br>
+  <%= f.input :avatar, label: "Choose your avatar"%>
+  <br>
+  <br>
+  <h3>Temperature</h3>
+  <h5>Set your personal preference for each temperature range</h5>
+  <br>
+    <%= f.input :temp_br1, label: "Freezing"%>
+    <%= f.input :temp_br2, label: "Cold:"%>
+    <%= f.input :temp_br3, label: "Warm:"%>
+    <%= f.input :temp_br4, label: "Very hot"%>
+    <%= f.button :submit, "Save", class: "btn btn-danger mb-2"%>
+  <%end%>
+</div>
+
