@@ -1,4 +1,5 @@
 class DashboardsController < ApplicationController
+    require 'open-uri'
 
     def index
        ## @dashboard = Dashboard.new
