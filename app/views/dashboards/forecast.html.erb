@@ -6,9 +6,11 @@
                 <%@forecast_hourly.each do |forecast|%>
                 <div class="swiper-slide">
                     <div id="time-overview">
-                        <p class="time"><%= forecast['dt'] %></p>
-                        <p class="temperature"><%= forecast['temp'] %></p>
-                        <img class="icon">
+                         <!-- refactor time in to the d controller after were done -->
+                        <p class="time"><%= Time.at(forecast['dt']).hour %></p>
+                        <p class="temperature"><%= (forecast['temp']).to_i  %>°C</p>
+                        <img class="icon" src='https://openweathermap.org/img/w/<%=forecast['weather'][0]['icon']%>.png'>
+
                     </div>
                 </div>
                 <%end%>
@@ -21,7 +23,7 @@
     <!-- Other weather data -->
     <div id="parameters">
         <p class="text-center"><%= "Feels like" %></p>
-        <p class="feels_like"><%= @forecast_hourly[0]['feels_like'] %></p>
+        <p class="feels_like"><%= (@forecast_hourly[0]['feels_like']).to_i %>°C</p>
         <ul>
             <li>Sunrise</li>
             <li>Sunset</li>
@@ -33,23 +35,23 @@
         </ul>
 
         <!-- Icons -->
-        <ul>
+        <ul class="text-center">
             <li></li>
             <li></li>
-            <li></i></li>
-            <li></i></li>
+            <li></li>
+            <li></li>
             <li></li>
             <li></li>
         </ul>
         <!-- API Current Data -->
-        <ul>
-            <li class="sunrise"></li>
-            <li class="sunset"></li>
-            <li class="visibility"></li>
-            <li class="speed"></li>
-            <li class="humidity"></li>
-            <li class="all"></li>
-            <li class="pressure"></li>
+        <ul class="text-center">
+            <li class="sunrise"><%= Time.at(@forecast_daily[0]['sunrise']).strftime('%H:%M')%></li>
+            <li class="sunset"><%= Time.at(@forecast_daily[0]['sunset']).strftime('%H:%M') %></li>
+            <li class="visibility"><%= @forecast_hourly[0]['feels_like'] %></li>
+            <li class="wind_speed"><%= @forecast_hourly[0]['wind_speed'] %></li>
+            <li class="humidity"><%= @forecast_hourly[0]['humidity'] %></li>
+            <li class="clouds"><%= @forecast_hourly[0]['clouds'] %></li>
+            <li class="pressure"><%= @forecast_hourly[0]['pressure'] %></li>
         </ul>
 
     </div>
