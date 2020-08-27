@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_093348) do
+ActiveRecord::Schema.define(version: 2020_08_27_140144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: :cascade do |t|
+    t.string "item_name"
+    t.integer "lowest_temperature"
+    t.integer "highest_temperature"
+    t.string "color"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "user_preferences", force: :cascade do |t|
     t.string "default_address"
@@ -29,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_08_27_093348) do
     t.integer "temp_br3", default: 20
     t.integer "temp_br4", default: 30
     t.time "notification_time"
+    t.string "name", default: "Marc"
     t.index ["user_id"], name: "index_user_preferences_on_user_id"
   end
 
@@ -42,6 +52,13 @@ ActiveRecord::Schema.define(version: 2020_08_27_093348) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "wardrobe_templates", force: :cascade do |t|
+    t.string "category"
+    t.string "svg"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
