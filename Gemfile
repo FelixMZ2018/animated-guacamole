@@ -62,3 +62,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'geocoder'
+# adding geocoding 
+gem 'swiper-rails'
+# adding swiper 
