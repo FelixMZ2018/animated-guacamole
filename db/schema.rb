@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_093348) do
+ActiveRecord::Schema.define(version: 2020_08_27_125749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2020_08_27_093348) do
     t.integer "temp_br3", default: 20
     t.integer "temp_br4", default: 30
     t.time "notification_time"
+    t.string "name", default: "Marc"
+    t.string "avatar", default: "female"
     t.index ["user_id"], name: "index_user_preferences_on_user_id"
   end
 
