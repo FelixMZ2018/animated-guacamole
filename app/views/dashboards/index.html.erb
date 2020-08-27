@@ -1,9 +1,35 @@
-<div class="container"></div>
 
-<div id="slider" style= "margin:10px">
+<button onclick="myFunction()">Click me</button>
+<p class="time"></p>
+
+<p class="temperature"></p>
+
+<p class="condition"></p>
+
+<script>
+
+var index = 0 
+var forecast = <%= JSON.generate(@forecast_hourly).html_safe%>
+console.log(forecast[index])
+update()
 
 
+function myFunction() {
+    if (index + 1 < forecast.length) {
+            index = index + 1
+    console.log(forecast[index])
+    update()
+    }
 
-</div>
+}
+
+function update(){
+    document.querySelector('.temperature').innerText = forecast[index].temp
+    var datetime = forecast[index].dt * 1000
+    document.querySelector('.time').innerText = Date(datetime).toLocaleString()
+    document.querySelector('.condition').innerText = forecast[index].weather[0].main
 
 
+}
+
+</script>

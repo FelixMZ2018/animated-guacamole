@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_115208) do
+ActiveRecord::Schema.define(version: 2020_08_27_093348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 2020_08_25_115208) do
     t.float "longitude"
     t.text "forecast"
     t.datetime "forecast_timestamp"
+    t.string "city", default: "Berlin"
+    t.integer "temp_br1", default: 0
+    t.integer "temp_br2", default: 10
+    t.integer "temp_br3", default: 20
+    t.integer "temp_br4", default: 30
+    t.time "notification_time"
     t.index ["user_id"], name: "index_user_preferences_on_user_id"
   end
 
