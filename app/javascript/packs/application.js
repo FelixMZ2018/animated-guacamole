@@ -24,11 +24,14 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { temperatureSlider } from '../plugins/init_noUiSlider';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+
+  temperatureSlider();
 
   $('i').on('click', function(){
 
@@ -60,7 +63,7 @@ document.addEventListener('turbolinks:load', () => {
 
 
 
-Resources
+// Resources
   // Call your functions here, e.g:
   // initSelect2();
 });
