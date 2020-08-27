@@ -31,11 +31,14 @@ import 'nouislider/distribute/nouislider.css';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initSlider } from '../plugins/init_slider';
 import { allowLocation } from '../components/allow_location';
 
 
 document.addEventListener('turbolinks:load', () => {
   allowLocation();
+    initSlider();
+
 
 
   temperatureSlider();

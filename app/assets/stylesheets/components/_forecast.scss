@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  text-align: center;
+  color: #0b0b0b;
+  font-family: "Cabin", sans-serif;
+}
+
+ul {
+  text-align: left;
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 7px;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+.hourly {
+  justify-content: center;
+  padding: 1em;
+}
+
+#bg-img {
+  background-image: url("https://uc582aa6778faa4f19cd88a854f9.previews.dropboxusercontent.com/p/orig/AA4CV4tWcJ4rbqGaM8_0nm6oeYw3k3EhJLFiy9LrK8SuGGbQQAIdTMFuAevbV6oFJLuofPAX6abXBfetMhQq3_q-sB3IAK_CAvVSDAI3TEFiY-gMfICPjJvxvElUer7KBgYCA3y-n23WIGYA4K5dbpCDM13YlNjwjHzCetjVyJXQsJj_FxEOSzUq6GEfA2lQwnBGzRH2lL0dF2d9B-pcfH5gmtteqEeywbgMCR-szbtDS4nR8c2O0kxgG5HyEHNTgO-8R_pLlvwTx7cXnyvlFIO9CpPDDCZMwle45P-2usXZIX2nohoK01qr5D5EX8gbhfc/p.svg?fv_content=true&size_mode=5");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 0 20px;
+}
+
+#wrapper {
+  margin: 0 auto;
+  width: 56%;
+  max-width: 1200px;
+  padding: 1%;
+}
+
+#forecast {
+  font-size: 100px;
+}
+
+#temp {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+#currentLocation,
+#currentDate {
+  text-align: left;
+}
+
+#currentWeather {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+#location {
+  padding: 7px;
+  border-top: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+#high-low {
+  font-size: 0.875rem;
+}
+
+#parameters {
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  overflow: hidden;
+  margin-top: 3.5%;
+  padding-left: 7px;
+}
+
+#parameters ul li {
+  padding-bottom: 7px;
+  line-height: 1.7;
+}
+
+#parameters ul {
+  width: 33%;
+  float: left;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 23px;
+  margin-bottom: 7px;
+}
+
+.toggle input {
+  display: none;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  #wrapper {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #wrapper {
+    width: 95%;
+  }
+
+  #forecast {
+    font-size: 75px;
+  }
+}
+

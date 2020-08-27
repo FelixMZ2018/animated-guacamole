@@ -1,0 +1,78 @@
+<div id="bg-img">
+    <div id="wrapper text-center">
+      <!-- Location and Date -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper d-flex">
+
+            <div class="swiper-slide">
+              <div id="time-overview">
+                <p class="time"><%= @forecast_hourly[0]['dt'] %></p>
+                <p class="temperature"><%= @forecast_hourly[0]['temp'] %></p>
+                <img class="icon">
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div id="time-overview">
+                <p id="next-hour"><%=  @forecast_hourly[1]['dt'] %></p>
+                <p id="next-deg"> <%= @forecast_hourly[1]['temp'] %></p>
+                <img id="icon">
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div id="time-overview">
+                <p id="next-hour"><%= @forecast_hourly[2]['dt'] %></p>
+                <p id="next-deg"><%= @forecast_hourly[2]['temp'] %></p>
+                <img id="icon">
+              </div>
+            </div>
+        </div>
+      </div>
+
+<hr>
+      <!-- Other weather data -->
+      <div id="parameters">
+        <p class="text-center"><%= "Feels like" %></p><p class="feels_like"><%= @forecast_hourly[0]['feels_like'] %></p>
+        <ul>
+          <li>Sunrise</li>
+          <li>Sunset</li>
+          <li>Visibility</li>
+          <li>Wind</li>
+          <li>Humidity</li>
+          <li>Cloud</li>
+          <li>Pressure</li>
+        </ul>
+
+        <!-- Icons -->
+        <ul>
+          <li></li>
+          <li></li>
+          <li></i></li>
+          <li></i></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <!-- API Current Data -->
+        <ul>
+          <li class="sunrise"></li>
+          <li class="sunset"></li>
+          <li class="visibility"></li>
+          <li class="speed"></li>
+          <li class="humidity"></li>
+          <li class="all"></li>
+          <li class="pressure"></li>
+        </ul>
+
+      </div>
+    </div>
+</div>
+
+  <!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container');
+  </script>
+
