@@ -1,3 +1,16 @@
+<style>
+.weather_image{
+    width: 100%
+}
+.cloud{
+    visibility: hidden;
+    transition-duration: 1s;
+
+}
+
+
+</style>
+
 
 <div class = "swiper-box">
 <p class="time"></p>
@@ -5,6 +18,10 @@
 <p class="temperature"></p>
 
 <p class="condition"></p>
+
+<%= image_tag  "cloud.png",:class => "weather_image cloud" %>
+
+
 </div>
 
 <script>
@@ -28,10 +45,16 @@ function update(){
     document.querySelector('.temperature').innerText = forecast[index].temp
     document.querySelector('.time').innerText = new Date(forecast[index].dt*1000)
     document.querySelector('.condition').innerText = forecast[index].weather[0].main
-
-
+    update_clouds()
 }
+function update_clouds(){
+ if (forecast[index].weather[0].main == "Clouds") {
+    document.querySelector('.cloud').style.visibility = "visible"
+ } else {
+    document.querySelector('.cloud').style.visibility = "hidden"
 
+ }
+}
 document.addEventListener("touchstart", startTouch, false);
 document.addEventListener("touchmove", moveTouch, false);
  
