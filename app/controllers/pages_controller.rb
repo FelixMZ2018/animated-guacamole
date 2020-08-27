@@ -10,11 +10,6 @@ class PagesController < ApplicationController
 
   end
 
-  private 
 
-  def api_call
-
-    
-  end
   
 end
