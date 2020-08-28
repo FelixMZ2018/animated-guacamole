@@ -6,19 +6,8 @@
     <%= simple_form_for @user_preference do |f| %>
     <%= f.input :name, label: "Name"%>
     <%= f.input :city, label: "Your location"%>
-    <p><%= "Choose your avatar" %></p>
-    <label>
-      <input type="radio" name="test" value="small">
-      <%= image_tag "woman.svg", alt: "woman" %>
-    </label>
+    <%= f.input :avatar, label: "Choose your avatar", as: :radio_buttons, collection: [['female', 'female'], ['male', 'male']], label_method: :second, value_method: :first %>
 
-    <label>
-      <input type="radio" name="test" value="big">
-      <%= image_tag "man.svg", alt: "man" %>
-    </label>
-
-
-    <br>
     <br>
     <h3 class="text-center">Temperature</h3>
     <h5 class="text-center">Set your personal preference for each temperature range</h5>
@@ -33,4 +22,5 @@
     <%end%>
   </div>
 </div>
+
 
