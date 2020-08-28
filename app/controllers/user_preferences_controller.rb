@@ -3,7 +3,7 @@ class UserPreferencesController < ApplicationController
     def update
         @user_preference = current_user.user_preference
             if @user_preference.update(preferences_params)
-              redirect_to root_path, notice: 'Preferences were successfully updated.'
+              redirect_to dashboards_path, notice: 'Preferences were successfully updated.'
             else
               render :edit
             end

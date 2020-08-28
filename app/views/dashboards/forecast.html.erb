@@ -1,5 +1,6 @@
 <div id="bg-img">
-    <div id="wrapper text-center">
+  <br>
+    <div id="wrapper text-center p-3">
         <!-- Location and Date -->
         <div class="swiper-container">
             <div class="swiper-wrapper d-flex">
@@ -7,7 +8,7 @@
                 <div class="swiper-slide">
                     <div id="time-overview">
                          <!-- refactor time in to the d controller after were done -->
-                        <p class="time"><%= Time.at(forecast['dt']).hour %></p>
+                        <p class="time"><%= Time.at(forecast['dt']).strftime('%l%p') %></p>
                         <p class="temperature"><%= (forecast['temp']).to_i  %>°C</p>
                         <img class="icon" src='https://openweathermap.org/img/w/<%=forecast['weather'][0]['icon']%>.png'>
 
@@ -45,8 +46,8 @@
         </ul>
         <!-- API Current Data -->
         <ul class="text-center">
-            <li class="sunrise"><%= Time.at(@forecast_daily[0]['sunrise']).strftime('%H:%M')%></li>
-            <li class="sunset"><%= Time.at(@forecast_daily[0]['sunset']).strftime('%H:%M') %></li>
+            <li class="sunrise"><%= Time.at(@forecast_daily[0]['sunrise']).strftime('%l:%M %p')%></li>
+            <li class="sunset"><%= Time.at(@forecast_daily[0]['sunset']).strftime('%l:%M %p') %></li>
             <li class="visibility"><%= @forecast_hourly[0]['feels_like'] %></li>
             <li class="wind_speed"><%= @forecast_hourly[0]['wind_speed'] %></li>
             <li class="humidity"><%= @forecast_hourly[0]['humidity'] %></li>
@@ -56,6 +57,11 @@
 
     </div>
 </div>
+
+  <div class="icon-bar pb-2">
+    <a href="/preferences"><i class="fas fa-sliders-h right"></i></a>
+    <a class="active" href="/dashboards"><i class="fas fa-angle-up"></i></a>
+  </div>
 </div>
 
 <!-- Swiper JS -->

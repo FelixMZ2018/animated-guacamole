@@ -1,24 +1,28 @@
+<a href="/users/sign_out"><i class="fas fa-sign-out-alt m-3"></i></a>
+<%= link_to "logout", destroy_user_session_path %>
 <div class="vertical-form-container">
   <div class="vertical-form">
-
     <div class="step active text-center">
       <div class="title">Mar°C</div>
       <div class="content">
-      <h2>Your most accurate weather forecast </h2>
-       <h2>in one place</h2>
-        <p>Manage your personal preference</p>
-        <p> for each temperature range</p>
+      <h2>Your most accurate weather forecast in one place</h2>
+        <h8>Manage your personal preference</h8>
+        <h8> for each temperature range</h8>
+
+        <br>
         <br>
         <div class="button">
-          <%= link_to "Get started", new_user_registration_path, class: "btn btn-light" %>
+          <%= link_to "Get started", new_user_registration_path, class: "btn btn-warning" %>
           <br>
           <br>
           <%= link_to "Login", new_user_session_path %>
        </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="step step-2 next">
+   <!--  <div class="step step-2 next">
       <div class="title">Create your Profile</div>
       <div class="content">
         <p>You can make changes in settings</p>
@@ -62,5 +66,4 @@
 
     <i class="material-icons">Continue</i>
     </div>
-  </div>
-</div>
+  </div> -->
