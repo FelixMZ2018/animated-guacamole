@@ -9,10 +9,14 @@
     animation: cloud 5s infinite;
     animation-direction: alternate-reverse;
       position: absolute;
-
-
 }
 
+.raincloud{
+    transition-duration: 1s;
+    animation: cloud 5s infinite;
+    animation-direction: alternate-reverse;
+      position: absolute;
+}
 
 @keyframes cloud {
   0%   {right: 0%;}
@@ -77,12 +81,12 @@ function update(){
 }
 function update_clouds(){
  if (forecast[index].weather[0].main == "Clouds") {
-    document.querySelector('.cloud').style.display = "inital"
+    document.querySelector('.cloud').style.display = "flex"
  } else {
     document.querySelector('.cloud').style.display = "none"
  }
  if (forecast[index].weather[0].main == "Rain") {
-    document.querySelector('.raincloud').style.display = "initial"
+    document.querySelector('.raincloud').style.display = "flex"
  } else {
        document.querySelector('.raincloud').style.display = "none"
 
