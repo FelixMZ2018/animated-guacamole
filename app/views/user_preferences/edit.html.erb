@@ -5,7 +5,7 @@
     <br>
     <%= simple_form_for @user_preference do |f| %>
     <%= f.input :name, label: "Name"%>
-    <%= f.input :city, label: "Your location"%>
+    <%= f.input :address, label: "Your location"%>
     <%= f.input :avatar, label: "Choose your avatar", as: :radio_buttons, collection: [['female', 'female'], ['male', 'male']], label_method: :second, value_method: :first %>
 
     <br>
