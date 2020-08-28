@@ -3,6 +3,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  font-family:'Varela Round', sans-serif;
 }
 
 .vertical-form-container {
@@ -25,7 +26,9 @@ body {
 
 }
 h7 {
-  color: white;
+  color: #8A0032;
+  margin-top: 1.5em;
+
 }
 
 h8 {
@@ -52,16 +55,18 @@ h8 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     color: black;
     font-family: Helvetica, sans-serif;
 
     .title {
-      font-size: 40px;
-      margin-bottom: 1em;
+      font-size: 60px;
+      // margin-bottom: 4em;
       display: flex;
       justify-content: center;
-      color: white;
+      color: #8A0032;
+      font-family:'Varela Round', sans-serif;
+      margin-top: 1.5em;
     }
 
     > * {
