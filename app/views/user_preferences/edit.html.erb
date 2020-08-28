@@ -6,7 +6,14 @@
     <%= simple_form_for @user_preference do |f| %>
     <%= f.input :name, label: "Name"%>
     <%= f.input :city, label: "Your location"%>
-    <%= f.input :avatar, label: "Choose your avatar", as: :radio_buttons, collection: [['female', 'female'], ['male', 'male']], label_method: :second, value_method: :first %>
+    <%#= f.input :avatar, label: "Choose your avatar", as: :radio_buttons, collection: [['female', 'female'], ['male', 'male']], label_method: :second, value_method: :first %>
+<%= f.label "Choose your avatar" %>
+<div class="pl-3 text-center">
+<br>
+<%= f.collection_radio_buttons(:avatar, [['male', 'man'], ['female', 'woman']], :first, :last, :item_wrapper_class => 'horizontal') do |avatar|  %>
+ <%= avatar.label { image_tag("#{avatar.text}.svg") + avatar.radio_button  } %>
+  <% end %>
+</div>
 
     <br>
     <h3 class="text-center">Temperature</h3>
