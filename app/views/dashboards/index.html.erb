@@ -6,6 +6,15 @@
 .cloud{
     visibility: hidden;
     transition-duration: 1s;
+    width: 100%;
+    transition-duration: 1s;
+
+}
+
+.swiper-box{
+    height: 100%;
+    background-size: cover;
+    transition-duration: 2s;
 }
 
 </style>
@@ -20,7 +29,7 @@
 <p class="condition"></p>
 <br>
 <%= image_tag  "cloud.png",:class => "weather_image cloud" %>
-
+<%= image_tag "raincloud.png", :class => "weather_image raincloud" %>
 </div>
 
   <div class="icon-bar pb-3">
@@ -34,29 +43,28 @@ var index = 0
 var forecast = <%= JSON.generate(@forecast_hourly).html_safe%>
 console.log(forecast[index])
 update()
+update_background()
 
-
-function myFunction() {
-    if (index + 1 < forecast.length) {
-            index = index + 1
-    console.log(forecast[index])
-    update()
-    }
-
-}
 
 function update(){
     document.querySelector('.temperature').innerText = `${Math.round(forecast[index].temp)}°C`;
     document.querySelector('.time').innerText = new Date(forecast[index].dt*1000)
     document.querySelector('.condition').innerText = forecast[index].weather[0].main
     update_clouds()
+    update_clouds();
+    update_background()
 
 }
 function update_clouds(){
  if (forecast[index].weather[0].main == "Clouds") {
-    document.querySelector('.cloud').style.visibility = "visible"
+    document.querySelector('.cloud').style.display = "block"
  } else {
-    document.querySelector('.cloud').style.visibility = "hidden"
+    document.querySelector('.cloud').style.display = "none"
+ }
+ if (forecast[index].weather[0].main == "Rain") {
+    document.querySelector('.raincloud').style.display = "block"
+ } else {
+       document.querySelector('.raincloud').style.display = "none"
 
  }
 }
@@ -96,9 +104,7 @@ function moveTouch(e) {
             index = index + 1
     console.log(forecast[index])
     update()
-    }
-
-    } else {
+    }} else {
       // swiped right
       console.log("swiped right");
           if (index > 1) {
@@ -124,4 +130,23 @@ function moveTouch(e) {
   e.preventDefault();
 };
 
+
+function update_background() {
+   var hour =  new Date(forecast[index].dt*1000).getHours()
+   console.log(hour);
+switch (true) {
+  case hour > 23 || hour < 5 :
+    document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('night.svg') %>")'; 
+       break;
+  case hour >= 5 && hour <= 11:
+    document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('day.svg') %>")'; 
+        break;
+  case hour > 11 && hour <= 17:
+    document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('afternoon.svg') %>")'; 
+    break;
+  case hour > 18 && hour <= 23:
+    document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('evening.svg') %>")'; 
+
+}
+}
 </script>
