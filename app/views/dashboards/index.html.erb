@@ -61,10 +61,10 @@
 <br>
 <%= image_tag  "cloud2.png",:class => "weather_image cloud" %>
 <%= image_tag "raincloud.png", :class => "weather_image raincloud" %>
-<% if @user_preferences.avatar = "female"%>
-<%= image_tag "standing-f", :class => "avatar_image" %>
+<% if @user_preferences.avatar == "female"%>
+<%= image_tag "standing-female", :class => "avatar_image" %>
 <% else %>
-<%= image_tag "standing-m", :class => "avatar_image" %>
+<%= image_tag "standing-male", :class => "avatar_image" %>
 <% end%>
 
 </div>
