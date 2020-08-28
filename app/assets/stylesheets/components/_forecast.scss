@@ -47,9 +47,8 @@ h4 {
 
 #wrapper {
   margin: 0 auto;
-  width: 56%;
-  max-width: 1200px;
-  padding: 1%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 #forecast {
