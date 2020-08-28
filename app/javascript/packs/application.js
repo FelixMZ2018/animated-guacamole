@@ -25,9 +25,9 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { temperatureSlider } from '../plugins/init_noUiSlider';
-import 'nouislider';
-import 'nouislider/distribute/nouislider.css';
+/// import { temperatureSlider } from '../plugins/init_noUiSlider';
+/// import 'nouislider';
+/// import 'nouislider/distribute/nouislider.css';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -38,38 +38,38 @@ import { allowLocation } from '../components/allow_location';
 document.addEventListener('turbolinks:load', () => {
   allowLocation();
     initSlider();
-
-
-
-  temperatureSlider();
-
-  $('i').on('click', function(){
-
-  if($(this).text() == 'done'){
-    return false;
-  }
-
-  $(this).addClass('animating');
-
-  var activeStep = $('.step.active');
-  activeStep.addClass('sliding-out');
-  var nextStep = activeStep.next('.step');
-  nextStep.addClass('sliding-in');
-  nextStep.on('animationend', function(){
-    $(this).off('animationend');
-    activeStep.removeClass('active sliding-out').addClass('previous');
-    $(this).removeClass('next sliding-in').addClass('active');
-    $('i').removeClass('animating');
-
-    if(!$(this).next('.step').length){
-      $('i').html('done');
-    }
-    else {
-      $(this).next('.step').addClass('next');
-    }
-
-  })
-})
+//
+//
+//
+//  temperatureSlider();
+//
+//  $('i').on('click', function(){
+//
+//  if($(this).text() == 'done'){
+//    return false;
+//  }
+//
+//  $(this).addClass('animating');
+//
+//  var activeStep = $('.step.active');
+//  activeStep.addClass('sliding-out');
+//  var nextStep = activeStep.next('.step');
+//  nextStep.addClass('sliding-in');
+//  nextStep.on('animationend', function(){
+//    $(this).off('animationend');
+//    activeStep.removeClass('active sliding-out').addClass('previous');
+//    $(this).removeClass('next sliding-in').addClass('active');
+//    $('i').removeClass('animating');
+//
+//    if(!$(this).next('.step').length){
+//      $('i').html('done');
+//    }
+//    else {
+//      $(this).next('.step').addClass('next');
+//    }
+//
+//  })
+//})
 
 // Resources
   // Call your functions here, e.g:
