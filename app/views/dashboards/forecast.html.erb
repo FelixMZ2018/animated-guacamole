@@ -8,6 +8,7 @@
   <br>
     <div id="wrapper" class="text-center p-3">
         <!-- Location and Date -->
+        <h3> Hourly Forecast </h3>
         <div class="swiper-container">
             <div class="swiper-wrapper d-flex">
                 <%@forecast_hourly.each do |forecast|%>
@@ -29,8 +30,8 @@
     <hr>
     <!-- Other weather data -->
     <div id="parameters">
-        <p class="text-center"><%= "Feels like" %></p>
-        <p class="feels_like"><%= (@forecast_hourly[0]['feels_like']).to_i %>°C</p>
+        <h2 class="text-center"> Todays Weather </h2>
+        <p class="feels_like">it feels like <%= (@forecast_hourly[0]['feels_like']).to_i %>°C</p>
         <ul>
             <li>Sunrise</li>
             <li>Sunset</li>

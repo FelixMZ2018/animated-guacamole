@@ -36,8 +36,8 @@ import { allowLocation } from '../components/allow_location';
 
 
 document.addEventListener('turbolinks:load', () => {
-  allowLocation();
-    initSlider();
+//  allowLocation();
+//    initSlider();
 //
 //
 //
