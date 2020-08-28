@@ -4,6 +4,7 @@ class DashboardsController < ApplicationController
     def index
        ## @dashboard = Dashboard.new
         @user = current_user
+        @user_preferences = UserPreference.find_by_id(@user.id)
         @forecast = api_call()
         @forecast_current = @forecast['current']
         @forecast_hourly = []

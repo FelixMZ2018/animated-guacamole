@@ -2,12 +2,21 @@
 .weather_image{
     width: 60%;
     justify-content: center;
+    opacity: 0.7;
 }
 .cloud{
     transition-duration: 1s;
-    width: 100%;
-    transition-duration: 1s;
+    animation: cloud 5s infinite;
+    animation-direction: alternate-reverse;
+      position: absolute;
 
+
+}
+
+
+@keyframes cloud {
+  0%   {right: 0%;}
+  100% {right: 30%;}
 }
 
 .swiper-box{
@@ -16,18 +25,30 @@
     transition-duration: 2s;
 }
 
+.condition{
+    font-size: xx-large;
+    color: white;
+    }
+.city{
+    color: white;
+    font-size: x-large
+
+}
+.date{
+    color: white;
+    font-size: x-large
+}
 </style>
 <br>
 <br>
-
 <div class = "swiper-box text-center p-3">
-<p class="time"></p>
-
-<p class="temperature"></p>
+<p class="city"><%=@user_preferences.city%></p>
+<p class="date"></p> 
+<p class="month"></p>
 
 <p class="condition"></p>
 <br>
-<%= image_tag  "cloud.png",:class => "weather_image cloud" %>
+<%= image_tag  "cloud2.png",:class => "weather_image cloud" %>
 <%= image_tag "raincloud.png", :class => "weather_image raincloud" %>
 </div>
 
@@ -37,6 +58,8 @@
   </div>
 
 <script>
+var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 var index = 0
 var forecast = <%= JSON.generate(@forecast_hourly).html_safe%>
@@ -44,11 +67,9 @@ console.log(forecast[index])
 update()
 update_background()
 
-
 function update(){
-    document.querySelector('.temperature').innerText = `${Math.round(forecast[index].temp)}°C`;
-    document.querySelector('.time').innerText = new Date(forecast[index].dt*1000)
-    document.querySelector('.condition').innerText = forecast[index].weather[0].main
+    document.querySelector('.condition').innerText = `${Math.round(forecast[index].temp)}°C with ${forecast[index].weather[0].description}`;
+    document.querySelector('.date').innerText = days[new Date(forecast[index].dt*1000).getDay()] + " the " + new Date(forecast[index].dt*1000).getDate() + " of " + months[new Date(forecast[index].dt*1000).getMonth()] + " at " + new Date(forecast[index].dt*1000).getHours() + ":00";
     update_clouds()
     update_clouds();
     update_background()
@@ -56,12 +77,12 @@ function update(){
 }
 function update_clouds(){
  if (forecast[index].weather[0].main == "Clouds") {
-    document.querySelector('.cloud').style.display = "block"
+    document.querySelector('.cloud').style.display = "inital"
  } else {
     document.querySelector('.cloud').style.display = "none"
  }
  if (forecast[index].weather[0].main == "Rain") {
-    document.querySelector('.raincloud').style.display = "block"
+    document.querySelector('.raincloud').style.display = "initial"
  } else {
        document.querySelector('.raincloud').style.display = "none"
 
@@ -110,24 +131,15 @@ function moveTouch(e) {
             index = index - 1
     console.log(forecast[index])
     update()
-    }
-    }
-  } else {
-    // sliding vertically
-    if (diffY > 0) {
-      // swiped up
-      console.log("swiped up");
-    } else {
-      // swiped down
-      console.log("swiped down");
-    }
-  }
+    }}}
 
   initialX = null;
   initialY = null;
 
   e.preventDefault();
 };
+
+
 
 
 function update_background() {
