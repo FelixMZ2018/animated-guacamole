@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
       @item = Item.new(item_params)
       @user_preference = User.find(current_user.id).user_preference
       @item.user_preference_id = @user_preference.id
+      @item.condition_array = create_array(@item.lowest_temperature,@item.highest_temperature)
         if @item.save!
           redirect_to wardrobe_url, notice: 'Wardrobe was successfully created.'
         else
@@ -27,6 +28,14 @@ class ItemsController < ApplicationController
     def destroy
 
     end
+
+    def create_array(low,high)
+      conditions =  ["freezing", "cold", "just right", "warm", "hot"]
+      array = conditions[conditions.find_index(low)..conditions.find_index(high)]
+      return array
+
+    end
+    
 
 private
 

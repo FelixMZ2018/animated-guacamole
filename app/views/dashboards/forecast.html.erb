@@ -1,8 +1,8 @@
-<script>
+<!-- <script>
 /// document.removeEventListener("touchstart", startTouch, false);
 // document.removeEventListener("touchmove", moveTouch,false);
 
-</script>
+</script> -->
 
 <div id="bg-img">
   <br>
@@ -18,7 +18,6 @@
                         <p class="time"><%= Time.at(forecast['dt']).strftime('%l%p') %></p>
                         <p class="temperature"><%= (forecast['temp']).to_i  %>°C</p>
                         <img class="icon" src='https://openweathermap.org/img/w/<%=forecast['weather'][0]['icon']%>.png'>
-
                     </div>
                 </div>
                 <%end%>
@@ -30,27 +29,27 @@
     <hr>
     <!-- Other weather data -->
     <div id="parameters">
-        <h2 class="text-center"> Todays Weather </h2>
+        <h3 class="text-center"> Todays Weather </h3>
         <p class="feels_like">it feels like <%= (@forecast_hourly[0]['feels_like']).to_i %>°C</p>
         <ul>
-            <li>Sunrise</li>
-            <li>Sunset</li>
-            <li>Visibility</li>
-            <li>Wind</li>
-            <li>Humidity</li>
-            <li>Cloud</li>
-            <li>Pressure</li>
+            <strong><li>Sunrise</li></strong>
+            <strong><li>Sunset</li></strong>
+            <strong><li>Visibility</li></strong>
+            <strong><li>Wind</li></strong>
+           <strong><li>Humidity</li></strong>
+            <strong><li>Cloud</li></strong>
+            <strong><li>Pressure</li></strong>
         </ul>
 
         <!-- Icons -->
-        <ul class="text-center">
+<!--         <ul class="text-center">
             <li></li>
             <li></li>
             <li></li>
             <li></li>
             <li></li>
             <li></li>
-        </ul>
+        </ul> -->
         <!-- API Current Data -->
         <ul class="text-center">
             <li class="sunrise"><%= Time.at(@forecast_daily[0]['sunrise']).strftime('%l:%M %p')%></li>
@@ -65,9 +64,11 @@
     </div>
 </div>
   <div class="icon-bar pb-2">
-    <a href="/preferences"><i class="fas fa-sliders-h right"></i></a>
+    <a href="/preferences"><i class="fas fa-user-cog"></i></a>
     <a class="active" href="/dashboards"><i class="fas fa-angle-up"></i></a>
     <a href="/daily"><i class="fas fa-angle-down"></i></a>
+    <a href="#"> <i class="far fa-paper-plane"></i></a>
+    <a href="/wardrobe/new"><i class="fas fa-tshirt"></i></a>
   </div>
 </div>
 

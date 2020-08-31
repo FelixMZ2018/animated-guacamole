@@ -5,6 +5,7 @@ class DashboardsController < ApplicationController
        ## @dashboard = Dashboard.new
         @user = current_user
         @user_preferences = UserPreference.find_by_id(@user.id)
+        @items = Item.where(user_preference_id: @user_preferences.id)
         if @user_preferences.geocoded?
           #if time is before the end date than you re using address
           # @user_preferences.trip
@@ -24,6 +25,7 @@ class DashboardsController < ApplicationController
               end
           end
           @forecast_daily = @forecast['daily']
+          @wardrobe_selection = wardrobe_selection(@forecast_hourly,@user_preferences)
         else
           redirect_to preferences_path, notice: 'Please enter your location'
         end
@@ -52,6 +54,27 @@ class DashboardsController < ApplicationController
       redirect_to preferences_path, notice: 'Please enter your location'
     end
     end
+
+    def wardrobe_selection(forecast,preference)
+      wardrobe_array = []
+      forecast.each do |datapoint|
+      hash = {}
+      if datapoint['temp'] < preference.temp_br1
+        condition = "very cold"
+      elsif preference.temp_br1 > datapoint['temp'] && datapoint['temp'] < preference.temp_br2
+        condition = "cold"
+      elsif preference.temp_br2 > datapoint['temp'] && datapoint['temp'] < preference.temp_br3
+        condition = "just right"
+      elsif preference.temp_br3 > datapoint['temp'] && datapoint['temp']< preference.temp_br4
+        condition = "warm"
+      elsif datapoint['temp'] < preference.temp_br4
+        condition = "very warm"
+      end
+      hash['conditions'] = condition
+      wardrobe_array << hash
+      end
+      return wardrobe_array
+      end
 
     private
 

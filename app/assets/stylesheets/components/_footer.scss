@@ -1,6 +1,6 @@
 .icon-bar {
   position: absolute;
-  top: 2em;
+  bottom: 0;
   width: 100%; /* Full-width */
   //background-color: #84a7d2; /* Dark-grey background */
   overflow: auto; /* Overflow due to float */
@@ -14,10 +14,10 @@
   width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
   padding: 1em 0; /* Some top and bottom padding */
   transition: all 0.3s ease; /* Add transition for hover effects */
-  color: black; /* White text color */
+  color: white; /* White text color */
 }
 
 .icon-bar a:hover {
-  color: white;
+  color: black;
   // border-bottom-right-radius: 1em;
 }
