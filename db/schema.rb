@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_140144) do
+ActiveRecord::Schema.define(version: 2020_08_31_143255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 2020_08_27_140144) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_preference_id"], name: "index_items_on_user_preference_id"
     t.index ["wardrobe_templates_id"], name: "index_items_on_wardrobe_templates_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string "destination"
+    t.date "trip_start_date"
+    t.date "trip_end_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_preference_id"
+    t.index ["user_preference_id"], name: "index_trips_on_user_preference_id"
   end
 
   create_table "user_preferences", force: :cascade do |t|

@@ -6,6 +6,12 @@ class DashboardsController < ApplicationController
         @user = current_user
         @user_preferences = UserPreference.find_by_id(@user.id)
         if @user_preferences.geocoded?
+          #if time is before the end date than you re using address
+          # @user_preferences.trip
+          # trip = Trip.where(user_preference_id: @user_preferences.id)
+
+          # #current date & date
+
           @forecast = api_call()
           @forecast_current = @forecast['current']
           @forecast_hourly = []
