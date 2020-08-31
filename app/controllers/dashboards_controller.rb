@@ -4,7 +4,7 @@ class DashboardsController < ApplicationController
     def index
        ## @dashboard = Dashboard.new
         @user = current_user
-        @user_preferences = UserPreference.find_by_id(@user.id)
+        @user_preferences = UserPreference.find_by_id(@user.user_preference.id)
         @items = Item.where(user_preference_id: @user_preferences.id)
         if @user_preferences.geocoded?
           #if time is before the end date than you re using address
