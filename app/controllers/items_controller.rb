@@ -1,23 +1,24 @@
 class ItemsController < ApplicationController
 
     def index
-        @user = User.find(current_user.id)
-        @items = Item.where(user_id: @user.id)
+        @user = current_user
+        @user_preference = User.find(current_user.id).user_preference
+        @items = Item.where(user_preference_id: @user_preference.id)
     end
 
     def new
+        @user_preference = User.find(current_user.id).user_preference
         @templates = WardrobeTemplate.all
         @item = Item.new
-
     end
 
 
    def create
       @item = Item.new(item_params)
-      @user = User.find(params[:user_id])
-      @item.user = @user
-        if @item.save
-          redirect_to @user, notice: 'wardrobe was successfully created.'
+      @user_preference = User.find(current_user.id).user_preference
+      @item.user_preference_id = @user_preference.id
+        if @item.save!
+          redirect_to wardrobe_url, notice: 'Wardrobe was successfully created.'
         else
           render :new
         end
@@ -30,7 +31,7 @@ class ItemsController < ApplicationController
 private
 
     def item_params
-        params.require(:item).permit(:temp_br1, :temp_br2, :temp_br3, :temp_br4)
+        params.require(:item).permit(:wardrobe_templates_id, :item_name, :lowest_temperature, :highest_temperature, :user_preference_id)
     end
 
 

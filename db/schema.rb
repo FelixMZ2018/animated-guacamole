@@ -20,11 +20,11 @@ ActiveRecord::Schema.define(version: 2020_08_27_140144) do
     t.integer "lowest_temperature"
     t.integer "highest_temperature"
     t.string "color"
-    t.bigint "user_id"
+    t.bigint "user_preference_id"
     t.bigint "wardrobe_templates_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_items_on_user_id"
+    t.index ["user_preference_id"], name: "index_items_on_user_preference_id"
     t.index ["wardrobe_templates_id"], name: "index_items_on_wardrobe_templates_id"
   end
 
