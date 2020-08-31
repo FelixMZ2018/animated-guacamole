@@ -20,28 +20,29 @@ class DashboardsController < ApplicationController
     end
 
     def forecast
-        @user = current_user
-        @forecast = api_call()
-        @forecast_hourly = @forecast['hourly']
-        @forecast_daily = @forecast['daily']
-
-
-
+      @user = current_user
+      @forecast = api_call()
+      @forecast_hourly = @forecast['hourly']
+      @forecast_daily = @forecast['daily']
     end
+
+    def daily
+      @user = current_user
+      @forecast = api_call()
+      @forecast_hourly = @forecast['hourly']
+      @forecast_daily = @forecast['daily']
+    end
+
     private
 
     def api_call
-        #### TO DO ADD FALLBACK LOGIC
-        @user = current_user
-        url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{@user.user_preference.latitude}&lon=#{@user.user_preference.longitude}&exclude={minutely}&appid=#{ENV['OPENWEATHERAPI']}&units=metric"
-        response = open(url).read
-        hash = JSON.parse response
+      #### TO DO ADD FALLBACK LOGIC
+      @user = current_user
+      url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{@user.user_preference.latitude}&lon=#{@user.user_preference.longitude}&exclude={minutely}&appid=#{ENV['OPENWEATHERAPI']}&units=metric"
+      response = open(url).read
+      hash = JSON.parse response
 
         return hash
-
-
-
-
 
     end
 end
