@@ -1,1 +1,13 @@
-<%= @items %>
+<div class="container">
+
+<% @items.each do |item| %>
+  <div>
+    <p>name: <%= item.item_name %></p>
+    <p>category: <%= item.wardrobe_template.category %></p>
+    <p>image</p>
+
+  </div>
+<% end %>
+
+</div>
+

@@ -1,0 +1,19 @@
+<div class="container">
+<h1> Customize your wardrobe <h2>
+
+ <div class="m-3">
+
+        <h4>Add an Item </h4>
+        <%= simple_form_for @item do |f| %>
+        <%= f.association :wardrobe_template, label_method: :category %>
+        <%= f.input :item_name, label: "Item Name"%>
+        <%= f.input :lowest_temperature, collection: ["freezing", "cold", "just right", "warm", "hot" ], label: "Lowest Temperature"%>
+        <%= f.input :highest_temperature, collection: ["freezing", "cold", "just right", "warm", "hot"], label: "Highest Temperature"%>
+        <%= f.submit 'Save', class: 'btn btn-success m-2' %>
+        <% end %>
+        </div>
+    </div>
+
+    </div>
+
+
