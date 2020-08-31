@@ -11,6 +11,8 @@ test_acc = User.new(email: "test@marc.de",password: "password")
 test_acc.save
 test_acc.user_preference.address = "Berlin"
 test_acc.user_preference.save
-WardrobeTemplate.create(category: "Shirt")
-WardrobeTemplate.create(category: "Jeans")
-WardrobeTemplate.create(category: "T Shirt")
+WardrobeTemplate.create(category: "Sweatshirt")
+WardrobeTemplate.create(category: "Trousers")
+WardrobeTemplate.create(category: "T-Shirt")
+WardrobeTemplate.create(category: "Jacket")
+WardrobeTemplate.create(category: "Shorts")
