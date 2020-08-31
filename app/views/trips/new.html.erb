@@ -1,0 +1,15 @@
+<div class="col-6">
+  <h3>Our travel weather tool is ideal for showing what weather you might run into at you travel destination.
+  You can save the end date of your journey and after that the weather forecast will be based again on your default location</h3>
+
+
+    <div class="container">
+      <h1> Set your travel mode </h1>
+        <%= simple_form_for [@trip] do |f| %>
+          <%= f.input :destination, label: "Your travel destination"%>
+          <%= f.input :trip_start_date, label: "Begins"%>
+          <%= f.input :trip_end_date, label: "Until When"%>
+          <%= f.submit 'Save', class: 'btn btn-danger mx-auto d-block mt-2' %>
+        <%end%>
+    </div>
+  </div>

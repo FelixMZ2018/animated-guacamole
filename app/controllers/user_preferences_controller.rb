@@ -7,11 +7,10 @@ class UserPreferencesController < ApplicationController
             else
               render :edit
             end
-
-    end
+      end
 
     def edit
-        @user_preference = current_user.user_preference
+      @user_preference = current_user.user_preference
     end
 
   private
