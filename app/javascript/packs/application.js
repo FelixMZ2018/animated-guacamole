@@ -34,7 +34,6 @@ import "bootstrap";
 import { initSlider } from '../plugins/init_slider';
 import { allowLocation } from '../components/allow_location';
 
-
 document.addEventListener('turbolinks:load', () => {
 //  allowLocation();
 //    initSlider();

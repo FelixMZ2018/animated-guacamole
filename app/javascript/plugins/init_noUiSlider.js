@@ -14,4 +14,3 @@ const temperatureSlider = () => {
   });
 }
 export { temperatureSlider };
-

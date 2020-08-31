@@ -12,9 +12,6 @@ class UserPreferencesController < ApplicationController
 
     def edit
         @user_preference = current_user.user_preference
-
-
-
     end
 
   private

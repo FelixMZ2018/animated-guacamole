@@ -1,0 +1,99 @@
+var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+var forecast = <%= JSON.generate(@forecast_hourly).html_safe%>
+var index = 0
+/// const forecast = document.querySelector('#storageElement');
+
+update()
+update_background()
+
+function update(){
+    document.querySelector('.condition').innerText = `${Math.round(forecast[index].temp)}°C with ${forecast[index].weather[0].description}`;
+    document.querySelector('.date').innerText = days[new Date(forecast[index].dt*1000).getDay()] + " the " + new Date(forecast[index].dt*1000).getDate() + " of " + months[new Date(forecast[index].dt*1000).getMonth()] + " at " + new Date(forecast[index].dt*1000).getHours() + ":00";
+    update_clouds()
+    update_clouds();
+    update_background()
+}
+
+function update_clouds(){
+ if (forecast[index].weather[0].main == "Clouds") {
+    document.querySelector('.cloud').style.display = "flex"
+ } else {
+    document.querySelector('.cloud').style.display = "none"
+ }
+ if (forecast[index].weather[0].main == "Rain") {
+    document.querySelector('.raincloud').style.display = "flex"
+ } else {
+       document.querySelector('.raincloud').style.display = "none"
+ }
+}
+forecast_element = document.querySelector('#dashboard')
+forecast_element.addEventListener("touchstart", startTouch, false);
+forecast_element.addEventListener("touchmove", moveTouch, false);
+
+// Swipe Up / Down / Left / Right
+var initialX = null;
+var initialY = null;
+
+function startTouch(e) {
+  initialX = e.touches[0].clientX;
+  initialY = e.touches[0].clientY;
+};
+
+function moveTouch(e) {
+  if (initialX === null) {
+    return;
+  }
+
+  if (initialY === null) {
+    return;
+  }
+
+  var currentX = e.touches[0].clientX;
+  var currentY = e.touches[0].clientY;
+
+  var diffX = initialX - currentX;
+  var diffY = initialY - currentY;
+
+  if (Math.abs(diffX) > Math.abs(diffY)) {
+    // sliding horizontally
+    if (diffX > 0) {
+      // swiped left
+      //console.log("swiped left");
+          if (index + 1 < forecast.length) {
+            index = index + 1
+    //        console.log(index);
+    //console.log(forecast[index])
+    update()
+    }} else {
+      // swiped right
+      //console.log("swiped right");
+          if (index > 1) {
+            index = index - 1
+    //console.log(forecast[index])
+    update()
+    }}}
+
+  initialX = null;
+  initialY = null;
+
+  e.preventDefault();
+};
+
+function update_background() {
+   var hour =  new Date(forecast[index].dt*1000).getHours()
+   //console.log(hour);
+switch (true) {
+  case hour > 23 || hour < 5 :
+    document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('night.svg') %>")'; 
+       break;
+  case hour >= 5 && hour <= 11:
+    document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('day.svg') %>")'; 
+        break;
+  case hour > 11 && hour <= 17:
+    document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('afternoon.svg') %>")'; 
+    break;
+  case hour > 18 && hour <= 23:
+    document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('evening.svg') %>")'; 
+}
+}
