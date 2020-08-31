@@ -1,8 +1,16 @@
 <div id="dashboard" class = "swiper-box text-center p-3">
-<p class="city"><%=@user_preferences.address%></p>
-<p class="date"></p>
-<p class="month"></p>
-<p class="condition"></p>
+  <div class="top text-center">
+    <br>
+    <h7 class="city"><%=@user_preferences.address%></h7><br>
+    <h7 class="date"></h7><br>
+    <h7 class="month"></h7>
+    <h7 class="time"></h7>
+  </div>
+  <br>
+  <div class="float-left pl-4">
+    <h1 class="condition"></h1>
+    <p class="temp text-light"></p>
+  </div>
 <br>
 <%= image_tag  "cloud2.png",:class => "weather_image cloud" %>
 <%= image_tag "raincloud.png", :class => "weather_image raincloud" %>
