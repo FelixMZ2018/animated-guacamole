@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :user_preferences,only: [:edit, :update]
   resources :items, only:[:delete]
 
+  get 'daily', :to => 'dashboards#daily'
   get 'forecast', :to => 'dashboards#forecast'
   get 'preferences', :to => 'user_preferences#edit'
   get 'wardrobe', :to => 'items#index'
