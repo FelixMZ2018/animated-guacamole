@@ -10,20 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_140144) do
+ActiveRecord::Schema.define(version: 2020_08_31_144246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
     t.string "item_name"
-    t.integer "lowest_temperature"
-    t.integer "highest_temperature"
+    t.string "lowest_temperature"
+    t.string "highest_temperature"
     t.string "color"
     t.bigint "user_preference_id"
     t.bigint "wardrobe_templates_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "condition_array"
     t.index ["user_preference_id"], name: "index_items_on_user_preference_id"
     t.index ["wardrobe_templates_id"], name: "index_items_on_wardrobe_templates_id"
   end
