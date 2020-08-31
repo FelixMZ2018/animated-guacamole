@@ -10,8 +10,8 @@ class CreateItems < ActiveRecord::Migration[6.0]
 
     create_table :items do |t|
       t.string :item_name
-      t.integer :lowest_temperature
-      t.integer :highest_temperature
+      t.string :lowest_temperature
+      t.string :highest_temperature
       t.string :color
       t.belongs_to :user_preference, index: true
       t.belongs_to :wardrobe_templates, index: true
