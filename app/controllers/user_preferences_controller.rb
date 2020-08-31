@@ -13,13 +13,6 @@ class UserPreferencesController < ApplicationController
       @user_preference = current_user.user_preference
     end
 
-    def travel
-      @trip = Trip.new
-      @user = current_user
-      @user_preferences = UserPreference.find_by_id(@user.id)
-    end
-
-
   private
 
   def preferences_params
