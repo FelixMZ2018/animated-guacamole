@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'daily', :to => 'dashboards#daily'
   get 'forecast', :to => 'dashboards#forecast'
   get 'preferences', :to => 'user_preferences#edit'
+  post 'preferences', :to => 'user_preferences#update'
   get 'wardrobe', :to => 'items#index'
   get 'wardrobe/new', :to => 'items#new'
   post 'wardrobe', :to => 'items#create'
