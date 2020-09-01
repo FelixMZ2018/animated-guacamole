@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
 private
 
     def item_params
-        params.require(:item).permit(:color,:wardrobe_templates_id, :item_name, :lowest_temperature, :highest_temperature, :user_preference_id, :id)
+        params.require(:item).permit(:color,:wardrobe_templates_id, :item_name, :lowest_temperature, :highest_temperature, :user_preference_id)
     end
 
 
