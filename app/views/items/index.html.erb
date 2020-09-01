@@ -11,7 +11,7 @@
 <div class="card" style="width: 18rem;">
   <%= item.render_string.html_safe %>
   <div class="card-body">
-    <p class="card-title">Name: <%= item.item_name %></p>
+    <p class="card-title">Name: <%= item.wardrobe_template.category %></p>
     <p class="card-text">Lowest temperature:<%= item.lowest_temperature %></p>
     <p class="card-text">Highest temperature: <%= item.highest_temperature %></p>
   </div>
