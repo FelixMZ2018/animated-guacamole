@@ -11,23 +11,17 @@ class DashboardsController < ApplicationController
         trips = Trip.where(user_preference_id: @user_preferences.id)
         current_date = DateTime.now
 
-              # @user_preferences.address = @user_preferences.city
-              # @user_preferences.save
-
-
           if trips.length > 0
-            # trip in the past
-              if trips[0].trip_end_date < current_date
-                @user_preferences.address = @user_preferences.default_address
-                @user_preferences.save
-                Trip.find_by_id(trips[0].id).destroy
+            if trips[0].trip_end_date < current_date
+              @user_preferences.address = @user_preferences.default_address
+              @user_preferences.save
+              Trip.find_by_id(trips[0].id).destroy
 
-              elsif current_date > trips[0].trip_start_date && current_date < trips[0].trip_end_date
-                @user_preferences.address = trips[0].destination
-                @user_preferences.save
-              end
+            elsif current_date > trips[0].trip_start_date && current_date < trips[0].trip_end_date
+              @user_preferences.address = trips[0].destination
+              @user_preferences.save
+            end
           end
-
 
           @forecast = api_call()
 
@@ -49,7 +43,6 @@ class DashboardsController < ApplicationController
     end
 
     def forecast
-
       @user = current_user
       @user_preferences = UserPreference.find_by_id(@user.id)
       if @user_preferences.geocoded?
@@ -99,7 +92,6 @@ class DashboardsController < ApplicationController
     def api_call
       #### TO DO ADD FALLBACK LOGIC
       @user = current_user
-      p @user.user_preference.latitude
       url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{@user.user_preference.latitude}&lon=#{@user.user_preference.longitude}&exclude={minutely}&appid=#{ENV['OPENWEATHERAPI']}&units=metric"
       response = open(url).read
       hash = JSON.parse response
