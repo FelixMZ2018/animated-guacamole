@@ -1,15 +1,39 @@
-<div class="col-6">
-  <h3>Our travel weather tool is ideal for showing what weather you might run into at you travel destination.
-  You can save the end date of your journey and after that the weather forecast will be based again on your default location</h3>
-
-
+<div class="container-edit">
+  <a class="ml-3" href="/dashboards"><i class="fas fa-chevron-left"></i></a>
     <div class="container">
-      <h1> Set your travel mode </h1>
-        <%= simple_form_for [@trip] do |f| %>
-          <%= f.input :destination, label: "Your travel destination"%>
-          <%= f.input :trip_start_date, label: "Begins"%>
-          <%= f.input :trip_end_date, label: "Until When"%>
-          <%= f.submit 'Save', class: 'btn btn-danger mx-auto d-block mt-2' %>
-        <%end%>
+      <h1 class="text-center"> Hi, <%= @current_user.user_preference.name %> <br> you can set your travel mode here </h1>
+  <div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <i class="fas fa-info-circle"></i>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        Our travel mode is ideal for planning your next trip. Just add your travel destination and trip date. The dashboard will automatically display the weather forecast based on your destination. After your journey’s end the weather forecast will be adjusted to your default location.
+      </div>
     </div>
   </div>
+
+        <br>
+        <br>
+        <%= simple_form_for [@trip] do |f| %>
+          <%= f.input :destination, label: "Your travel destination", placeholder: "Enter a city"%>
+          <br>
+          <br>
+    <h6>Travel dates</h6>
+          <%= f.input :trip_start_date, label: "Starts"%>
+          <%= f.input :trip_end_date, label: "Ends"%>
+          <%= f.submit 'Save', class: 'btn btn-danger mx-auto d-block mt-2' %>
+        <%end%>
+
+
+
+      </div>
+    </div>
+  </div>
+
+

@@ -1,12 +1,14 @@
 class TripsController < ApplicationController
   def new
     @trip = Trip.new
+    @user = current_user
+    @user_preferences = UserPreference.find_by_id(@user.user_preference.id)
   end
 
   def create
     @trip = Trip.new(trips_params)
     @user = current_user
-    @user_preferences = UserPreference.find_by_id(@user.id)
+    @user_preferences = UserPreference.find_by_id(@user.user_preference.id)
     @trip.user_preference_id = @user_preferences.id
     if @trip.save!
       redirect_to dashboards_url, notice: 'Your travel was successfully created.'
