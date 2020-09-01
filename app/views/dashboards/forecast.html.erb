@@ -6,12 +6,13 @@
 
 <div id="bg-img">
   <br>
-    <div id="wrapper" class="text-center p-3">
+    <div id="wrapper">
+      <br>
         <!-- Location and Date -->
         <h3> Hourly Forecast </h3>
         <div class="swiper-container">
-            <div class="swiper-wrapper d-flex">
-                <%@forecast_hourly.each do |forecast|%>
+            <div class="swiper-wrapper">
+                <%@forecast_hourly[0..12].each do |forecast|%>
                 <div class="swiper-slide">
                     <div id="time-overview">
                          <!-- refactor time in to the d controller after were done -->
@@ -63,12 +64,12 @@
 
     </div>
 </div>
-  <div class="icon-bar pb-2">
-    <a href="/preferences"><i class="fas fa-user-cog"></i></a>
+  <div class="icon-bar">
+    <a href="/preferences"><i class="fas fa-user"></i><p>Account</p></a>
     <a class="active" href="/dashboards"><i class="fas fa-angle-up"></i></a>
     <a href="/daily"><i class="fas fa-angle-down"></i></a>
-    <a href="#"> <i class="far fa-paper-plane"></i></a>
-    <a href="/wardrobe/new"><i class="fas fa-tshirt"></i></a>
+    <a href="#"> <i class="far fa-paper-plane"></i><p>Travel Plan</p></a>
+    <a href="/wardrobe/new"><i class="fas fa-tshirt"></i><p>Wardrobe</p></a>
   </div>
 </div>
 

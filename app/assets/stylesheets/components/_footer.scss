@@ -2,10 +2,11 @@
   position: absolute;
   bottom: 0;
   width: 100%; /* Full-width */
+  background-color: rgba(0, 0, 0, 0.4);
   //background-color: #84a7d2; /* Dark-grey background */
   overflow: auto; /* Overflow due to float */
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 2em;
+  border-bottom-right-radius: 2em;
 }
 
 .icon-bar a {
@@ -15,6 +16,7 @@
   padding: 1em 0; /* Some top and bottom padding */
   transition: all 0.3s ease; /* Add transition for hover effects */
   color: white; /* White text color */
+  text-decoration: none;
 }
 
 .icon-bar a:hover {

@@ -1,4 +1,4 @@
-<div id="dashboard" class = "swiper-box text-center p-3">
+<div id="dashboard" class = "swiper-box text-center">
   <div class="top text-center">
     <br>
     <h7 class="city"><%=@user_preferences.address%></h7><br>
@@ -7,7 +7,7 @@
     <h7 class="time"></h7>
   </div>
   <br>
-  <div class="float-left pl-4">
+  <div class="float-left pl-4 pb-3">
     <h1 class="condition"></h1>
     <p class="temp text-light"></p>
   </div>
@@ -20,11 +20,11 @@
 <%= image_tag "standing-male", :class => "avatar_image" %>
 <% end%>
 
-  <div class="icon-bar pb-1 mt-2 pr-2">
-    <a href="/preferences"><i class="fas fa-user-cog"></i></a>
+  <div class="icon-bar pr-3">
+    <a href="/preferences"><i class="fas fa-user"></i><p>Account</p></a>
     <a href="/forecast"><i class="fas fa-chevron-down"></i></a>
-    <a href="#"> <i class="far fa-paper-plane"></i></a>
-    <a href="/wardrobe/new"><i class="fas fa-tshirt"></i></a>
+    <a href="#"> <i class="far fa-paper-plane"></i><p>Travel Plan</p></a>
+    <a href="/wardrobe/new"><i class="fas fa-tshirt"></i><p>Wardrobe</p></a>
   </div>
 </div>
 
