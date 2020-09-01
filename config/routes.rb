@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'wardrobe', :to => 'items#index'
   get 'wardrobe/new', :to => 'items#new'
   post 'wardrobe', :to => 'items#create'
+  delete '/wardrobe/:id', to: 'items#destroy', as: 'delete'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

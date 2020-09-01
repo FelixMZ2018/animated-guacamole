@@ -28,11 +28,13 @@ class ItemsController < ApplicationController
       end
 
     def destroy
-
+        @item = Item.find(params[:id])
+        @item.destroy
+        redirect_to wardrobe_path
     end
 
     def create_array(low,high)
-      if low == high 
+      if low == high
         array << high
       else
       conditions =  ["freezing", "cold", "just right", "warm", "hot"]
@@ -45,7 +47,7 @@ class ItemsController < ApplicationController
 
 
     end
-    
+
 
 private
 
