@@ -6,10 +6,8 @@ class AddTravelMode < ActiveRecord::Migration[6.0]
       t.string :destination
       t.date :trip_start_date
       t.date :trip_end_date
-
+      t.belongs_to :user_preference, index: true
       t.timestamps
     end
-    add_index :trips, :user_preference_id
-
   end
 end

@@ -6,8 +6,7 @@ class DashboardsController < ApplicationController
         @user = current_user
         @user_preferences = UserPreference.find_by_id(@user.user_preference.id)
         @items = Item.where(user_preference_id: @user_preferences.id)
-        wardrobe_creation(@items)
-        raise
+        @wardrobe = wardrobe_creation(@items)
         if @user_preferences.geocoded?
           #if time is before the end date than you re using address
           # @user_preferences.trip
@@ -81,17 +80,16 @@ class DashboardsController < ApplicationController
     private
 
     def wardrobe_creation(items)
-      top_array = items.joins(:wardrobe_template).where("wardrobe_templates.rendering_group = 'top'").sample
+      top_array = items.joins(:wardrobe_template).where("wardrobe_templates.rendering_group = 'top'")
       bottom_array = items.joins(:wardrobe_template).where("wardrobe_templates.rendering_group = 'bottom'")
-      hash = {"freezing" => "", "cold" => "", "just right" => "", "warm" => "", "hot" => ""}
-      array_t = ["freezing", "cold", "just right", "warm", "hot"]
-      array_b = ["freezing", "cold", "just right", "warm", "hot"]
-      p top_array
-      #p hash
-      #p top_array[0].condition_array.include(hash[0])
-      #p top_array[0].wardrobe_template.rendering_group
-
-
+      hash = {
+        "freezing" => {"top" => top_array.select { |item| item.condition_array.include?("freezing")}.sample,"bottom" => bottom_array.select { |item| item.condition_array.include?("freezing")}.sample},
+        "cold" => {"top" => top_array.select { |item| item.condition_array.include?("cold")}.sample,"bottom" => bottom_array.select { |item| item.condition_array.include?("cold")}.sample},
+        "just right" => {"top" => top_array.select { |item| item.condition_array.include?("just right")}.sample,"bottom" => bottom_array.select { |item| item.condition_array.include?("just right")}.sample},
+        "warm" => {"top" => top_array.select { |item| item.condition_array.include?("warm")}.sample,"bottom" => bottom_array.select { |item| item.condition_array.include?("warm")}.sample},
+        "hot" => {"top" => top_array.select { |item| item.condition_array.include?("hot")}.sample,"bottom" => bottom_array.select { |item| item.condition_array.include?("hot")}.sample},
+          }
+      return hash
     end
 
     def api_call
