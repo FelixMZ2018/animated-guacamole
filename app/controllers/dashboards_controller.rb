@@ -6,6 +6,8 @@ class DashboardsController < ApplicationController
         @user = current_user
         @user_preferences = UserPreference.find_by_id(@user.user_preference.id)
         @items = Item.where(user_preference_id: @user_preferences.id)
+        wardrobe_creation(@items)
+        raise
         if @user_preferences.geocoded?
           #if time is before the end date than you re using address
           # @user_preferences.trip
@@ -77,6 +79,20 @@ class DashboardsController < ApplicationController
       end
 
     private
+
+    def wardrobe_creation(items)
+      top_array = items.joins(:wardrobe_template).where("wardrobe_templates.rendering_group = 'top'").sample
+      bottom_array = items.joins(:wardrobe_template).where("wardrobe_templates.rendering_group = 'bottom'")
+      hash = {"freezing" => "", "cold" => "", "just right" => "", "warm" => "", "hot" => ""}
+      array_t = ["freezing", "cold", "just right", "warm", "hot"]
+      array_b = ["freezing", "cold", "just right", "warm", "hot"]
+      p top_array
+      #p hash
+      #p top_array[0].condition_array.include(hash[0])
+      #p top_array[0].wardrobe_template.rendering_group
+
+
+    end
 
     def api_call
       #### TO DO ADD FALLBACK LOGIC

@@ -30,8 +30,12 @@ class ItemsController < ApplicationController
     end
 
     def create_array(low,high)
+      if low == high 
+        array << high
+      else
       conditions =  ["freezing", "cold", "just right", "warm", "hot"]
       array = conditions[conditions.find_index(low)..conditions.find_index(high)]
+      end
       return array
 
     end
