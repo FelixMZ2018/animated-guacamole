@@ -2,6 +2,7 @@ var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturda
 var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 var forecast = <%= JSON.generate(@forecast_hourly).html_safe%>
 var index = 0
+var outfits = <%= JSON.generate(@outfits).html_safe%>
 /// const forecast = document.querySelector('#storageElement');
 
 update()
