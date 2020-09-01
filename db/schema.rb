@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 2020_08_31_144246) do
     t.string "destination"
     t.date "trip_start_date"
     t.date "trip_end_date"
+    t.bigint "user_preference_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_preference_id"
     t.index ["user_preference_id"], name: "index_trips_on_user_preference_id"
   end
 
