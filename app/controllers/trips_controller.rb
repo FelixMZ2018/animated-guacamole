@@ -1,6 +1,8 @@
 class TripsController < ApplicationController
   def new
     @trip = Trip.new
+    @user = current_user
+    @user_preferences = UserPreference.find_by_id(@user.id)
   end
 
   def create
