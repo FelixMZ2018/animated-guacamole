@@ -97,10 +97,6 @@ class DashboardsController < ApplicationController
 
 
   def user_condition(datapoint, preference)
-    p datapoint['temp'].class
-    p datapoint['temp']
-
-    p preference
     if datapoint['temp'] < preference.temp_br1
       condition = 'very cold'
     elsif preference.temp_br1 <= datapoint['temp'] && datapoint['temp'] < preference.temp_br2
@@ -112,8 +108,6 @@ class DashboardsController < ApplicationController
     elsif datapoint['temp'] >= preference.temp_br4
       condition = 'very warm'
     end
-    p condition
-
     return condition
     end
 
@@ -137,7 +131,6 @@ class DashboardsController < ApplicationController
     #### TO DO ADD FALLBACK LOGIC
     @user = current_user
     url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{@user.user_preference.latitude}&lon=#{@user.user_preference.longitude}&appid=#{ENV['OPENWEATHERAPI']}&units=metric"
-    p url
     response = open(url).read
     hash = JSON.parse response
 
