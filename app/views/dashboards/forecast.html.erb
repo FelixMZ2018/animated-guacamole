@@ -6,10 +6,12 @@
 
 <div id="bg-img">
   <br>
+  <a class="left" href="/dashboards"><i class="fas fa-chevron-left"></i></a>
+  <a class="right" href="/daily"><i class="fas fa-chevron-right"></i></a>
     <div id="wrapper">
       <br>
         <!-- Location and Date -->
-        <h3> Hourly Forecast </h3>
+        <h3 class="text-center"> Hourly Forecast </h3>
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <%@forecast_hourly[0..12].each do |forecast|%>
@@ -64,12 +66,10 @@
 
     </div>
 </div>
-  <div class="icon-bar">
+  <div class="icon-bar text-center">
+    <a href="/wardrobe"><i class="fas fa-tshirt"></i><p>Wardrobe</p></a>
+    <a href="/trips/new"> <i class="far fa-paper-plane"></i><p>Travel Plan</p></a>
     <a href="/preferences"><i class="fas fa-user"></i><p>Account</p></a>
-    <a class="active" href="/dashboards"><i class="fas fa-angle-up"></i></a>
-    <a href="/daily"><i class="fas fa-angle-down"></i></a>
-    <a href="#"> <i class="far fa-paper-plane"></i><p>Travel Plan</p></a>
-    <a href="/wardrobe/new"><i class="fas fa-tshirt"></i><p>Wardrobe</p></a>
   </div>
 </div>
 

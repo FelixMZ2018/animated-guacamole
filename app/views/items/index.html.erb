@@ -5,21 +5,24 @@
   <div class="container text-center">
     <h1><%= "My Wardrobe Items:"  %></h1>
     <br>
-
+    <strong><p class="ml-3"> Add a new Wardrobe Item <a class="pl-2" href="/wardrobe/new"><i class="fas fa-plus"></i></a> </p></strong>
+    <br>
 <% @items.each do |item| %>
 
-<div class="card" style="width: 18rem;">
+<div class="card mr-5" style="width: 15rem;">
   <%= item.render_string.html_safe %>
   <div class="card-body">
-    <p class="card-title">Name: <%= item.wardrobe_template.category %></p>
-    <p class="card-text">Lowest temperature:<%= item.lowest_temperature %></p>
-    <p class="card-text">Highest temperature: <%= item.highest_temperature %></p>
+    <p class="card-title"><strong>Name:</strong> <%= item.wardrobe_template.category %></p>
+    <p class="card-text"><strong>Lowest temperature:</strong> <%= item.lowest_temperature %></p>
+    <p class="card-text"><strong>Highest temperature:</strong> <%= item.highest_temperature %></p>
   </div>
-    <%= link_to  "Delete", delete_path(item) ,method: :delete, class: "btn btn-warning", data: { confirm: 'Are you sure you want to delete' }%>
+  <%= link_to delete_path(item), method: :delete, class: "delete" ,method: :delete, data: { confirm: 'Are you sure you want to delete' } do %>
+    <i class="far fa-trash-alt"></i>
+  <% end %>
 </div>
 <% end %>
 
 </div>
-<br>
-    <strong><p class="ml-5"> Add a new Wardrobe Item <a class="pl-2" href="/wardrobe/new"><i class="fas fa-plus"></i></a> </p></strong>
 </div>
+
+

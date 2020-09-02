@@ -30,6 +30,16 @@ h4 {
 }
 
 
+.left {
+  margin-right: 19rem;
+  margin-top: 1rem;
+  color: white;
+}
+
+.right {
+  margin-left: 19rem;
+  color: white;
+}
 .swiper-wrapper {
   justify-content: space-between;
   display: flex;
@@ -50,7 +60,7 @@ h4 {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  //justify-content: flex-start;
   text-align: center;
   padding: 0 20px;
 }
