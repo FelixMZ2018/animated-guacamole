@@ -3,7 +3,9 @@ var months = ['January','February','March','April','May','June','July','August',
 var forecast = <%= JSON.generate(@forecast_hourly).html_safe%>
 var index = 0
 var outfits = <%= JSON.generate(@outfits).html_safe%>
+var avatar = <%= JSON.generate(@user_preferences.avatar_rendering_string).html_safe%>
 /// const forecast = document.querySelector('#storageElement');
+$( "#avatar_head" ).replaceWith(avatar);
 
 update()
 update_background()

@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_112659) do
+ActiveRecord::Schema.define(version: 2020_09_02_090408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "avatar_styles", force: :cascade do |t|
+    t.string "name"
+    t.string "gender"
+    t.string "rendering_template"
+    t.bigint "user_preference_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_preference_id"], name: "index_avatar_styles_on_user_preference_id"
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "item_name"
@@ -56,6 +66,9 @@ ActiveRecord::Schema.define(version: 2020_09_01_112659) do
     t.time "notification_time"
     t.string "name", default: "Marc"
     t.string "avatar", default: "female"
+    t.string "hairstyle"
+    t.string "skin_tone", default: "#C58C85"
+    t.string "avatar_rendering_string"
     t.index ["user_id"], name: "index_user_preferences_on_user_id"
   end
 

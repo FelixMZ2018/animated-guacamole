@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
       @item.user_preference_id = @user_preference.id
    ##   @item.render_string = @item.wardrobe_
       @item.condition_array = create_array(@item.lowest_temperature,@item.highest_temperature)
-      @item.render_string = @item.wardrobe_template.svg.gsub("**COLOR**",@item.color)
+      @item.render_string = @item.wardrobe_template.svg.gsub("**COLOR**",@item.color).gsub("**SKIN_COLOR**",@user_preference.skin_tone)
         if @item.save!
           redirect_to wardrobe_url, notice: 'Wardrobe was successfully created.'
         else
