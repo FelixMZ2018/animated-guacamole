@@ -1,4 +1,28 @@
-Add the stuff here
+<div class="container-travel">
+<br>
+<h1 class="travel">Hi, <%= @current_user.user_preference.name %></h1>
+<br>
+<hr>
+<strong><h8 class="text-dark">Here is your upcoming trip 🛫</h8></strong>
+  <br>
+  <br>
+  <br>
 <% @trips.each do |trip| %>
-<%= trip.destination %>
+<div class="card-product">
+  <div class="card-product-infos">
+    <strong><p class="text-dark"><%= trip.destination %></p></strong>
+    <p class="text-dark"><%= trip.trip_start_date %>-<%= trip.trip_end_date %></p>
+  </div>
+</div>
+
 <%end%>
+
+<!--
+  <div class="icon-bar">
+    <a href="/wardrobe"><i class="fas fa-tshirt"></i><p>Wardrobe</p></a>
+    <a href="/trips/new"> <i class="far fa-paper-plane"></i><p>Travel Plan</p></a>
+    <a href="/preferences"><i class="fas fa-user"></i><p>Account</p></a>
+  </div> -->
+</div>
+
+
