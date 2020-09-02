@@ -1,9 +1,12 @@
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+
 <div id="dashboard" class = "swiper-box text-center">
   <br>
   <a class="right" href="/forecast"><i class="fas fa-chevron-right"></i></a>
   <div class="top text-center">
     <br>
-    <h7 class="city"><%=@user_preferences.city%></h7><br>
+    <h7 class="city"><%=@user_preferences.address%></h7><br>
     <h7 class="date"></h7><br>
     <h7 class="month"></h7>
     <h7 class="time"></h7>
@@ -16,11 +19,17 @@
 <br>
 <%= image_tag  "cloud2.png",:class => "weather_image cloud" %>
 <%= image_tag "raincloud.png", :class => "weather_image raincloud" %>
-<% if @user_preferences.avatar == "female"%>
-<%= image_tag "standing-female", :class => "avatar_image" %>
-<% else %>
-<%= image_tag "standing-male", :class => "avatar_image" %>
-<% end%>
+<div id = "avatar_composite">
+<div class = "bottom"><div id="Wardrobe_bottom"></div></div>
+
+<div class = "top"><div id="Wardrobe_top"></div></div>
+</div>
+
+<%# if @user_preferences.avatar == "female"%>
+<%#= image_tag "standing-female", :class => "avatar_image" %>
+<%# else %>
+<%#= image_tag "standing-male", :class => "avatar_image" %>
+<%# end%>
 
   <div class="icon-bar">
     <a href="/wardrobe"><i class="fas fa-tshirt"></i><p>Wardrobe</p></a>

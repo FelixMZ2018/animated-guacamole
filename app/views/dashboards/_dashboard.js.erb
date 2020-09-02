@@ -13,9 +13,13 @@ function update(){
     document.querySelector('.date').innerText = days[new Date(forecast[index].dt*1000).getDay()] + ' '  + new Date(forecast[index].dt*1000).getDate() +' ' + months[new Date(forecast[index].dt*1000).getMonth()]
     document.querySelector('.time').innerText = new Date(forecast[index].dt*1000).getHours() + ":00";
     document.querySelector('.temp').innerText = `${forecast[index].weather[0].description}`;
-    update_clouds()
     update_clouds();
-    update_background()
+    update_clouds();
+    update_background();
+    console.log(forecast[index].condition);
+    $( "#Wardrobe_top" ).replaceWith( outfits[forecast[index].condition].top);
+    $( "#Wardrobe_bottom" ).replaceWith( outfits[forecast[index].condition].bottom);
+
 }
 
 function update_clouds(){
