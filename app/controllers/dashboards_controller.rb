@@ -112,7 +112,7 @@ class DashboardsController < ApplicationController
         @fallback_bottom
       end
     else
-      fallback.svg
+      fallback.render_string
     end
   end
 
