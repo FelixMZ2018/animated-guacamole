@@ -18,12 +18,17 @@ $( "#avatar_head" ).replaceWith(avatar);
 update()
 update_background()
 
-
+//`${new Date().getHours()}:${new Date().getMinutes()}`
 
 function update(){
     document.querySelector('.condition').innerText = `${Math.round(forecast[index].temp)}°C`;
     document.querySelector('.date').innerText = days[new Date(forecast[index].dt*1000).getDay()] + ' '  + new Date(forecast[index].dt*1000).getDate() +' ' + months[new Date(forecast[index].dt*1000).getMonth()]
-    document.querySelector('.time').innerText = new Date(forecast[index].dt*1000).getHours() + ":00";
+    if (index === 0) {
+    document.querySelector('.time').innerText = `${new Date().getHours()}:${new Date().getMinutes()}`
+    }else{
+    document.querySelector('.time').innerText = display_time(new Date(forecast[index].dt*1000).getHours());
+    }
+    display_time(new Date(forecast[index].dt*1000).getHours())
     document.querySelector('.temp').innerText = `${forecast[index].weather[0].description}`;
     update_clouds();
     update_clouds();
@@ -115,4 +120,12 @@ switch (true) {
   case hour > 18 && hour <= 23:
     document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('evening.svg') %>")';
 }
+}
+function display_time (hour) {
+  console.log(hour)
+  const period = +hour < 12 ? 'AM' : 'PM'
+  if ( hour > 12 ){
+  hour = hour - 12 
+  }
+  return( `${hour} ${period}`)
 }
