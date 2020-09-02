@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :dashboards, only:[:index]
   resources :user_preferences,only: [:edit, :update]
   resources :items, only:[:delete, :new, :create]
-  resources :trips, only:[:delete, :new, :create]
+  resources :trips, only:[:delete, :new, :create,:index]
   resources :temperatures, only:[:new]
 
   get 'daily', :to => 'dashboards#daily'
