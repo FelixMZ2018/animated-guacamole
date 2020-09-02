@@ -3,7 +3,9 @@ import 'nouislider/distribute/nouislider.css';
 
 const temperatureSlider = () => {
 var range = document.getElementById('range');
+if (range) {
 var breakpoints_values = range.dataset.breakpoints.split(",").map(b => parseInt(b))
+
 
 noUiSlider.create(range, {
 
@@ -43,6 +45,8 @@ noUiSlider.create(range, {
     //     density: 4
     // }
   });
+
+
 range.style.height = '400px';
 range.style.margin = '0 auto 30px';
 
@@ -66,10 +70,14 @@ var diffDivs = [
 //     diffDivs[1].innerHTML = values[2] - values[1];
 //     diffDivs[2].innerHTML = values[3] - values[2];
 // });
+  }
 }
 
+
   const submitValues = () => {
-    document.querySelector('#submit-temperature').addEventListener('click', (event) => {
+    const submit = document.querySelector('#submit-temperature');
+    if (submit) {
+    submit.addEventListener('click', (event) => {
     const range = document.getElementById('range');
     const data = range.noUiSlider.get();
     fetch('/temperatures/new', {
@@ -79,8 +87,9 @@ var diffDivs = [
         'Accept': 'application/json'
       },
     body: JSON.stringify(data)
-    })
-  });
+      })
+    });
+  }
 }
 export { temperatureSlider, submitValues };
 
