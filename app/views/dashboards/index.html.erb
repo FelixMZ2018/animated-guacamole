@@ -1,4 +1,6 @@
 <div id="dashboard" class = "swiper-box text-center">
+  <br>
+  <a class="right" href="/forecast"><i class="fas fa-chevron-right"></i></a>
   <div class="top text-center">
     <br>
     <h7 class="city"><%=@user_preferences.city%></h7><br>
@@ -20,11 +22,10 @@
 <%= image_tag "standing-male", :class => "avatar_image" %>
 <% end%>
 
-  <div class="icon-bar pr-3">
+  <div class="icon-bar">
+    <a href="/wardrobe"><i class="fas fa-tshirt"></i><p>Wardrobe</p></a>
+    <a href="/trips/new"> <i class="far fa-paper-plane"></i><p>Travel Plan</p></a>
     <a href="/preferences"><i class="fas fa-user"></i><p>Account</p></a>
-    <a href="/forecast"><i class="fas fa-chevron-down"></i></a>
-    <a href="#"> <i class="far fa-paper-plane"></i><p>Travel Plan</p></a>
-    <a href="/wardrobe/new"><i class="fas fa-tshirt"></i><p>Wardrobe</p></a>
   </div>
 </div>
 
