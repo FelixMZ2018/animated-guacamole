@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :user_preferences,only: [:edit, :update]
   resources :items, only:[:delete, :new, :create]
   resources :trips, only:[:delete, :new, :create]
+  resources :temperatures, only:[:new]
 
   get 'daily', :to => 'dashboards#daily'
   get 'forecast', :to => 'dashboards#forecast'
@@ -14,6 +15,6 @@ Rails.application.routes.draw do
   get 'wardrobe/new', :to => 'items#new'
   post 'wardrobe', :to => 'items#create'
   delete '/wardrobe/:id', to: 'items#destroy', as: 'delete'
-
+  post 'temperatures/new', :to => 'temperatures#set_breakpoints'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
