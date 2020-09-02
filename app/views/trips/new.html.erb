@@ -1,7 +1,7 @@
 <div class="container-edit">
   <a class="ml-3" href="/dashboards"><i class="fas fa-chevron-left"></i></a>
     <div class="container">
-      <h1 class="text-center"> Hi, <%= @current_user.user_preference.name %> <br> you can set your travel mode here </h1>
+      <h1 class="text-center"> Hi, <strong><%= @current_user.user_preference.name %></strong><br> you can set your travel mode here </h1>
   <div id="accordion">
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -17,23 +17,30 @@
       </div>
     </div>
   </div>
-
-        <br>
-        <br>
+      <br>
+      <br>
+      <br>
         <%= simple_form_for [@trip] do |f| %>
-          <%= f.input :destination, label: "Your travel destination", placeholder: "Enter a city"%>
-          <br>
-          <br>
-    <h6>Travel dates</h6>
-          <%= f.input :trip_start_date, label: "Starts"%>
-          <%= f.input :trip_end_date, label: "Ends"%>
+          <%= f.error_notification %>
+
+          <%= f.input :destination, label: "Your travel destination", placeholder: "Enter a city" %>
+      <br>
+      <br>
+        <h5>Travel dates</h5>
+      <br>
+          <%= f.input :trip_start_date, label: "Starts", as: :string, required: true, input_html: {class: "datepicker"}, placeholder: "Select date"%>
+          <%= f.input :trip_end_date, label: "Ends", as: :string, required: true, input_html: {class: "datepicker"}, placeholder: "Select date"%>
+      <br>
+      <br>
+      <br>
           <%= f.submit 'Save', class: 'btn btn-danger mx-auto d-block mt-2' %>
         <%end%>
-
-
 
       </div>
     </div>
   </div>
+
+
+
 
 

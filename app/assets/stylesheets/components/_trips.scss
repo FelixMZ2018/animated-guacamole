@@ -1,3 +1,7 @@
+.ml-3 {
+color: #0D09CB;
+}
+
 #trip_trip_start_date_1i, #trip_trip_start_date_2i, #trip_trip_start_date_3i, #trip_trip_end_date_1i, #trip_trip_end_date_2i, #trip_trip_end_date_3i {
 
 color: black;
@@ -14,7 +18,16 @@ font-family: "Varela Round";
 
 .string .optional {
 color: black;
-font-size: medium;
+font-size: 1.25rem;
+font-family: "Varela Round";
+}
+
+.string .required {
+font-size: 1.25rem;
+font-family: "Varela Round";
+}
+
+.flatpickr-calendar {
 font-family: "Varela Round";
 }
 
@@ -28,7 +41,14 @@ font-family: "Varela Round";
 
 .btn-link {
    float: right;
+   color: #0D09CB;
 }
+
+.btn-link:hover {
+    color: #8B8ABD;
+    text-decoration: none;
+}
+
 .card {
   border: none;
   float: right;
@@ -37,6 +57,12 @@ font-family: "Varela Round";
     color: #6c757d78;
     opacity: 1;
   }
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: white;
+    opacity: 1;
+    border-radius: 4px;
+}
 
 .btn-danger {
   display: inline-block;
@@ -48,10 +74,15 @@ font-family: "Varela Round";
   padding: 0.5rem 4rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 40px;
+  border-radius: 20px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  margin-top: 5em;
-  background: linear-gradient(180deg, #FECF73 0%, rgba(255, 122, 122, 0) 100%);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  color: #643306;
+  background: linear-gradient(89.35deg, #0E032D 0.37%, rgba(82, 93, 189, 0.99) 131.81%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
 }
