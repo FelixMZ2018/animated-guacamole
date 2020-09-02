@@ -25,7 +25,7 @@ class DashboardsController < ApplicationController
         end
       end
       @forecast = api_call
-      ## @forecast_current = @forecast['current']  SCHEDULED FOR DELETION
+      @warnings = warnings(@forecast)
       @forecast_hourly = []
       count = 2
       @forecast['hourly'].each do |forecast|
@@ -41,6 +41,7 @@ class DashboardsController < ApplicationController
       @forecast_hourly.each do |datapoint|
         @conditions << user_condition(datapoint, @user_preferences)
       end
+      p @conditions
       @outfits = slim_wardrobe_creation(@conditions,@items)
       
     else
@@ -78,28 +79,42 @@ class DashboardsController < ApplicationController
     bottom_array = items.joins(:wardrobe_template).where("wardrobe_templates.rendering_group = 'bottom'")
     wardrobe = {}
     conditions_array.each do |condition|
+      unless condition == nil
       wardrobe[condition] = {
         'top' => template_fallback(top_array.select { |item| item.condition_array.include?(condition) }.sample, 'top'),
         'bottom' => template_fallback(bottom_array.select { |item| item.condition_array.include?(condition) }.sample, 'bottom')
       }
     end
+    end
     return wardrobe
+  end
+
+  def warnings(forecast)
+    hourly = forecast['hourly']
+    candidates = hourly.select { |e| e['weather'][0]['main'] == "Rain" }
+    return candidates.first if !candidates.empty?
   end
 
 
   def user_condition(datapoint, preference)
+    p datapoint['temp'].class
+    p datapoint['temp']
+
+    p preference
     if datapoint['temp'] < preference.temp_br1
       condition = 'very cold'
-    elsif preference.temp_br1 > datapoint['temp'] && datapoint['temp'] < preference.temp_br2
+    elsif preference.temp_br1 <= datapoint['temp'] && datapoint['temp'] < preference.temp_br2
       condition = 'cold'
-    elsif preference.temp_br2 > datapoint['temp'] && datapoint['temp'] < preference.temp_br3
+    elsif preference.temp_br2 <= datapoint['temp'] && datapoint['temp'] < preference.temp_br3
       condition = 'just right'
-    elsif preference.temp_br3 > datapoint['temp'] && datapoint['temp'] < preference.temp_br4
+    elsif preference.temp_br3 <= datapoint['temp'] && datapoint['temp'] < preference.temp_br4
       condition = 'warm'
-    elsif datapoint['temp'] < preference.temp_br4
+    elsif datapoint['temp'] >= preference.temp_br4
       condition = 'very warm'
     end
-    condition
+    p condition
+
+    return condition
     end
 
   def template_fallback(fallback, rendering_group)
@@ -121,7 +136,8 @@ class DashboardsController < ApplicationController
   def api_call
     #### TO DO ADD FALLBACK LOGIC
     @user = current_user
-    url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{@user.user_preference.latitude}&lon=#{@user.user_preference.longitude}&exclude={minutely}&appid=#{ENV['OPENWEATHERAPI']}&units=metric"
+    url = "https://api.openweathermap.org/data/2.5/onecall?lat=#{@user.user_preference.latitude}&lon=#{@user.user_preference.longitude}&appid=#{ENV['OPENWEATHERAPI']}&units=metric"
+    p url
     response = open(url).read
     hash = JSON.parse response
 

@@ -9,6 +9,7 @@ var forecast = <%= JSON.generate(@forecast_hourly).html_safe%>
 var index = 0
 var outfits = <%= JSON.generate(@outfits).html_safe%>
 var avatar = <%= JSON.generate(@user_preferences.avatar_rendering_string).html_safe%>
+var warnings = <%= JSON.generate(@warnings).html_safe%>
 /// const forecast = document.querySelector('#storageElement');
 window.jQuery = $;
 window.$ = $;
