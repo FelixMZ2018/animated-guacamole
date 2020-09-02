@@ -44,12 +44,6 @@ class ItemsController < ApplicationController
       return array
     end
 
-    def svg_generation(color)
-
-
-    end
-
-
 private
 
     def item_params

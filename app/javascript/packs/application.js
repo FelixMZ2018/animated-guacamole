@@ -38,8 +38,8 @@ import "../plugins/flatpickr"
 // import { initSelect2 } from '../components/init_select2';
 import { initSlider } from '../plugins/init_slider';
 import { allowLocation } from '../components/allow_location';
-// window.jQuery = $;
-// window.$ = $;
+window.jQuery = $;
+window.$ = $;
 document.addEventListener('turbolinks:load', () => {
 //  allowLocation();
 //    initSlider();
