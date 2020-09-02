@@ -30,13 +30,16 @@
 <%# else %>
 <%#= image_tag "standing-male", :class => "avatar_image" %>
 <%# end%>
+<div class="greeting">
+  Hello, <%= @current_user.user_preference.name %>.
+  <br>The sky is clear and starry.
+  <br>Its getting chilly so take a jacket with you!
+</div>
 
   <div class="icon-bar">
     <a href="/wardrobe"><i class="fas fa-tshirt"></i><p>Wardrobe</p></a>
     <a href="/trips/new"> <i class="far fa-paper-plane"></i><p>Travel Plan</p></a>
     <a href="/preferences"><i class="fas fa-user"></i><p>Account</p></a>
-    <a href="/forecast"><i class="fas fa-chevron-down"></i></a>
-
   </div>
 </div>
 

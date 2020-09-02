@@ -28,12 +28,13 @@
             </div>
         </div>
     </div>
+    <br>
 
     <hr>
     <!-- Other weather data -->
-    <div id="parameters">
         <h3 class="text-center"> Todays Weather </h3>
         <p class="feels_like">it feels like <%= (@forecast_hourly[0]['feels_like']).to_i %>°C</p>
+    <div id="parameters">
         <ul>
             <strong><li>Sunrise</li></strong>
             <strong><li>Sunset</li></strong>
@@ -57,11 +58,11 @@
         <ul class="text-center">
             <li class="sunrise"><%= Time.at(@forecast_daily[0]['sunrise']).strftime('%l:%M %p')%></li>
             <li class="sunset"><%= Time.at(@forecast_daily[0]['sunset']).strftime('%l:%M %p') %></li>
-            <li class="visibility"><%= @forecast_hourly[0]['feels_like'] %></li>
-            <li class="wind_speed"><%= @forecast_hourly[0]['wind_speed'] %></li>
-            <li class="humidity"><%= @forecast_hourly[0]['humidity'] %></li>
-            <li class="clouds"><%= @forecast_hourly[0]['clouds'] %></li>
-            <li class="pressure"><%= @forecast_hourly[0]['pressure'] %></li>
+            <li class="visibility"><%= @forecast_hourly[0]['feels_like'] %> km</li>
+            <li class="wind_speed"><%= @forecast_hourly[0]['wind_speed'] %> m/s</li>
+            <li class="humidity"><%= @forecast_hourly[0]['humidity'] %> %</li>
+            <li class="clouds"><%= @forecast_hourly[0]['clouds'] %> %</li>
+            <li class="pressure"><%= @forecast_hourly[0]['pressure'] %> hPa</li>
         </ul>
 
     </div>
