@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
     end
 
     def create_array(low,high)
+      array = []
       if low == high
         array << high
       else
