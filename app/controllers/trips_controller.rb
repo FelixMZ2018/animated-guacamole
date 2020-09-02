@@ -1,4 +1,5 @@
 class TripsController < ApplicationController
+
   def new
     @trip = Trip.new
     @user = current_user
@@ -10,11 +11,12 @@ class TripsController < ApplicationController
     @user = current_user
     @user_preferences = UserPreference.find_by_id(@user.user_preference.id)
     @trip.user_preference_id = @user_preferences.id
+
     if @trip.save!
       redirect_to dashboards_url, notice: 'Your travel was successfully created.'
-        else
-          render :new
-      end
+    else
+      render :new, notice: 'Trip was not added'
+    end
   end
 
   private
