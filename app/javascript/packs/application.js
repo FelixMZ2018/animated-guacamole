@@ -23,6 +23,10 @@ require("channels")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree .
 // External imports
 import "bootstrap";
 /// import { temperatureSlider } from '../plugins/init_noUiSlider';
@@ -33,7 +37,8 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initSlider } from '../plugins/init_slider';
 import { allowLocation } from '../components/allow_location';
-
+window.jQuery = $;
+window.$ = $;
 document.addEventListener('turbolinks:load', () => {
 //  allowLocation();
 //    initSlider();
