@@ -9,7 +9,7 @@
       <%#= f.input :avatar, label: "Choose your avatar", as: :radio_buttons, collection: [['female', 'female'], ['male', 'male']], label_method: :second, value_method: :first %>
       <br>
       <br>
-      <%= f.input :hairstyle, label: "Choose your Hairstyle" %>
+      <%= f.input :hairstyle, label: "Choose your Hairstyle", collection: @avatar_templates %>
       <%= f.input :skin_tone , collection: [['#c58c85', 'Beige-Albâtre'], ['#ecbcb4', 'Beige-Rosé'], ['#d1a3a4', 'Lys-Rosé'], ['#a1665e', 'Sable-Beige'], ['#592f2a', 'Santal'], ['#503335', 'Ambré']], label_method: :second, value_method: :first %>
       <br>
       <br>
