@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   post 'wardrobe', :to => 'items#create'
   delete '/wardrobe/:id', to: 'items#destroy', as: 'delete'
   post 'temperatures/new', :to => 'temperatures#set_breakpoints'
+  delete '/trips/:id', :to => 'trips#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

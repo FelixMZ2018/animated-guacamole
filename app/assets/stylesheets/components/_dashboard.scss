@@ -18,14 +18,17 @@
   font-size: 2rem;
   color: white;
 }
-.temp {
-  font-size: 3rem;
-  margin-left: 3rem;
-  color: white;
-}
+//.temp {
+//  font-size: 3rem;
+//  margin-left: 3rem;
+//  color: white;
+//}
 .condition_temp {
-    margin-top: 37%;
-    margin-left: -4%;
+    margin-top: 34%;
+    margin-left: 8%;
+    color: white;
+    font-size: 1em;
+    text-align: initial
 }
 .weather_image{
     width: 60%;
@@ -51,14 +54,14 @@
     transition-duration: 2s;
     overflow: hidden;
 }
-
-.condition{
-    color: white;
-    font-size: 4rem;
-    margin-left: -3rem;
-    margin-top: -3rem;
-    }
-
+//
+//.condition{
+//    color: white;
+//    font-size: 4rem;
+//    margin-left: -3rem;
+//    margin-top: -3rem;
+//    }
+//
 .city{
     color: white;
     font-size: 2rem;
