@@ -1,7 +1,8 @@
 // Specific CSS for your home-page
 section {
-  width: 414px;
-  height: auto;
+  width: 1080px;
+  height: 1920px;
+  min-height: 100vh;
   border: 1px solid #ccc;
   border-radius: 30px;
   overflow-y: hidden;
@@ -24,7 +25,6 @@ section {
   position: relative;
   min-height: 100vh;
 }
-
 
 @media(max-width: 992px) {
   grid-template-columns: 1fr 1fr;

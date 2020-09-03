@@ -21,6 +21,7 @@ li p {
 
 .temperature {
   color: white;
+  font-size: 3rem;
 }
 
 h3 {
@@ -35,9 +36,13 @@ h3 {
 .table-borderless > thead > tr > th {
     border: none;
     padding-bottom: 0;
+    font-size: 3rem;
 }
 
 thead p {
   color: white;
-  font-size: 18px;
+}
+.table {
+width: 94%;
+margin-top: 6rem;
 }
