@@ -12,8 +12,8 @@ noUiSlider.create(range, {
 
     range: {
         'min': -10,
-        '25%': 15,
-        '50%': 25,
+        '33%': 15,
+        '66%': 25,
         'max':40
     },
 
@@ -22,8 +22,17 @@ noUiSlider.create(range, {
     // Handles start at ...
     start: breakpoints_values,
 
+    format: {
+      from: function(value) {
+              return parseInt(value);
+          },
+      to: function(value) {
+              return parseInt(value);
+          }
+      },
+
     // ... must be at least 300 apart
-    margin: 10,
+    margin: 1,
 
     // ... but no more than 600
     // limit: 600,
@@ -42,6 +51,7 @@ noUiSlider.create(range, {
     pips: {
                 mode: 'range',
                 density: 3
+
             }
 
 
