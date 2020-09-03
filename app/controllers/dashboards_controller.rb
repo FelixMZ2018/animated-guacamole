@@ -90,7 +90,7 @@ class DashboardsController < ApplicationController
   end
 
   def warnings(forecast)
-    hourly = forecast['hourly']
+    hourly = forecast['hourly'] ## NEEDS REVISITING
     warnings =  {}
     warnings['rain'] = hourly.select { |e| e['weather'][0]['main'] == "Rain" }
     p warnings
