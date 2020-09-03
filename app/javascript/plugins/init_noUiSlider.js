@@ -11,8 +11,10 @@ noUiSlider.create(range, {
 
 
     range: {
-        'min': -10,
-        'max': 50
+        'min': 10,
+        '25%': 15,
+        '50%': 25,
+        'max':30
     },
 
     step: 1,
@@ -36,6 +38,11 @@ noUiSlider.create(range, {
     // Move handle on tap, bars are draggable
     behaviour: 'tap-drag',
     tooltips: true,
+
+    pips: {
+                mode: 'range',
+                density: 3
+            }
 
 
     // Show a scale with the slider

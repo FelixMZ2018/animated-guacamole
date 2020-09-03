@@ -13,6 +13,28 @@
     margin-left: 3rem;
 }
 
+
+.icon-back {
+  font-size: 1.5rem;
+}
+
+
+.headline {
+    font-size: 2rem;
+}
+
+.carousel {
+  height: 350px;
+}
+
+.sub-headline {
+    color: #0D09CB;
+    font-size: 1rem;
+    i {
+      font-size:1rem
+    }
+}
+
 h2{
     display: inline-block;
     margin-bottom: 1em;
@@ -38,17 +60,23 @@ h2{
 .card-deck {
     display: flex;
     flex-flow: row wrap;
-    margin-left: 18rem;
     box-shadow: 0px 0px 15px 0px rgba(14,0,0,0.05);
     border-radius: 0.25rem;
     border: 1px solid #E5E5E5;
     background: white;
-    margin-top: 15rem;
     font-size: 2rem;
-    height: 45rem;
-    padding-top: 3rem;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+
+.card-title {
+  font-size: 1rem;
+
+}
+
+.card-text {
+  font-size: 1rem;
 }
 
 .fa-trash-alt {
