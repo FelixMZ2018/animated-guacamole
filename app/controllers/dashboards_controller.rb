@@ -91,8 +91,10 @@ class DashboardsController < ApplicationController
 
   def warnings(forecast)
     hourly = forecast['hourly']
-    candidates = hourly.select { |e| e['weather'][0]['main'] == "Rain" }
-    return candidates.first if !candidates.empty?
+    warnings =  {}
+    warnings['rain'] = hourly.select { |e| e['weather'][0]['main'] == "Rain" }
+    p warnings
+    return warnings.first if !warnings.empty?
   end
 
 
