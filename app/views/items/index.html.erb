@@ -23,7 +23,7 @@
                 <% @items.each_with_index do |item, i| %>
                 <div class="carousel-item  <%= i == 0 ? 'active' : '' %>">
                     <!--  <div class="carousel-item #{'active' if i == 0}"> -->
-                    <div class="card-deck" style="width: 15rem;">
+                    <div class="card-deck" style="width: 25rem;">
                         <%= item.render_string.html_safe %>
                         <div class="card-body">
                             <p class="card-title"><strong>Name:</strong> <%= item.wardrobe_template.category %></p>
@@ -50,7 +50,8 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-<div class="icon-bar">
+</div>
+<div class="icon-bar text-center">
     <a href="/wardrobe"><i class="fas fa-tshirt"></i>
         <p>Wardrobe</p>
     </a>
@@ -60,6 +61,5 @@
     <a href="/preferences"><i class="fas fa-user"></i>
         <p>Account</p>
     </a>
-</div>
 </div>
 

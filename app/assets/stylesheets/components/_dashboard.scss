@@ -109,14 +109,16 @@
     -webkit-box-shadow: 0 0 20px 0 #222;
     -moz-box-shadow: 0 0 20px 0 #222;
     display: none;
-    left: 50%;
+    left: 41%;
     margin: -120px 0 0 -160px;
     padding: 10px;
     position: absolute;
-    top: 50%;
-    width: 320px;
+    top: 59%;
+    width: 32rem;
     z-index: 1000;
+    font-size: 2.5rem;
 }
+
 
 #modal-background.active, #modal-content.active {
     display: block;
