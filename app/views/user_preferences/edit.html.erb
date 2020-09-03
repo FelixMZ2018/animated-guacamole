@@ -8,7 +8,7 @@
       <%= f.input :name, label: "Name"%>
       <%= f.input :address, label: "Your location"%>
       <%= f.input :hairstyle, label: "Choose your Hairstyle", collection: @avatar_templates %>
-      <%= f.input :skin_tone , collection: [['#c58c85', 'Beige-Albâtre'], ['#ecbcb4', 'Beige-Rosé'], ['#d1a3a4', 'Lys-Rosé'], ['#a1665e', 'Sable-Beige'], ['#592f2a', 'Santal'], ['#503335', 'Ambré']], label_method: :second, value_method: :first %>
+      <%= f.input :skin_tone , collection: [['#ecbcb4', 'Light'], ['#a1665e', 'Medium'], ['#503335', 'Dark']], label_method: :second, value_method: :first %>
       <br>
       <h3 class="text-center">Temperature</h3>
       <h5 class="text-center">Set your personal preference for each temperature range</h5>
