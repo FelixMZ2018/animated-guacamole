@@ -1,6 +1,7 @@
 #item_wardrobe_templates_id, #item_color, #item_lowest_temperature, #item_highest_temperature {
-  padding: 0;
-  font-size: 2.5rem;
+    font-size: 1rem;
+    color: black;
+    height: 45px;
 }
 
 .carousel-control-next, .carousel-control-prev {
@@ -10,7 +11,29 @@
 .card-deck svg {
     overflow: hidden;
     vertical-align: middle;
-    margin-left: 3rem;
+    margin: auto;
+}
+
+
+.icon-back {
+  font-size: 1.5rem;
+}
+
+
+.headline {
+    font-size: 2rem;
+}
+
+.carousel {
+  height: 350px;
+}
+
+.sub-headline {
+    color: #0D09CB;
+    font-size: 1rem;
+    i {
+      font-size:1rem
+    }
 }
 
 h2{
@@ -38,22 +61,32 @@ h2{
 .card-deck {
     display: flex;
     flex-flow: row wrap;
-    margin-left: 18rem;
     box-shadow: 0px 0px 15px 0px rgba(14,0,0,0.05);
     border-radius: 0.25rem;
     border: 1px solid #E5E5E5;
     background: white;
-    margin-top: 15rem;
     font-size: 2rem;
-    height: 45rem;
-    padding-top: 3rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 25px;
+}
+
+
+.card-title {
+  font-size: 1rem;
+
+}
+
+.card-text {
+  font-size: 1rem;
 }
 
 .fa-trash-alt {
   padding-left: 17rem;
 }
 
-
-
+label {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+  }

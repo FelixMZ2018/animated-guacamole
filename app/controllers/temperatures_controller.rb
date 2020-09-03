@@ -14,6 +14,8 @@ class TemperaturesController < ApplicationController
       key = "temp_br#{i + 1}"
       @user_preference[key] = breakpoint
     end
-    @user_preference.save!
+    if @user_preference.save!
+      redirect_to dashboards_url, notice: 'Your temperature ranges were successfully created.'
+    end
   end
 end

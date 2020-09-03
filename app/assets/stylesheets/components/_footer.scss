@@ -5,20 +5,23 @@
   background-color: rgba(0, 0, 0, 0.4);
   //background-color: #84a7d2; /* Dark-grey background */
   overflow: auto; /* Overflow due to float */
-  height: 8%;
-  padding-top: 1rem;
+  height: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 };
 
 .icon-bar a {
   //float: right; /* Float links side by side */
   text-align: center; /* Center-align text */
   width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
-  padding: 1remm 0em 0em 1rem; /* Some top and bottom padding */
   transition: all 0.3s ease; /* Add transition for hover effects */
   color: white; /* White text color */
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
   display: inline-block;
+  margin-bottom: 12px;
+
 }
 
 .icon-bar a:hover {
