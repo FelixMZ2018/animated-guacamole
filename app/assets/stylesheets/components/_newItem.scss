@@ -1,9 +1,17 @@
-
+#item_wardrobe_templates_id, #item_color, #item_lowest_temperature, #item_highest_temperature {
+  padding: 0;
+  font-size: 2.5rem;
+}
 
 .carousel-control-next, .carousel-control-prev {
   filter: invert(100%);
 }
 
+.card-deck svg {
+    overflow: hidden;
+    vertical-align: middle;
+    margin-left: 3rem;
+}
 
 h2{
     display: inline-block;
