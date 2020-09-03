@@ -1,20 +1,27 @@
-.date-description {
-  position: absolute;
-  margin-top: 8rem;
-  margin-left: 5rem;
+.greeting {
+  margin-top: 54rem;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 3em;
 }
 
-
+.date-description {
+  position: absolute;
+  margin-top: 23rem;
+  margin-left: 18rem;
+}
+.time {
+  font-size: 3rem;
+}
+.temp {
+  font-size: 3rem;
+  margin-left: 3rem;
+  color: white;
+}
 .weather_image{
     width: 60%;
     justify-content: center;
     opacity: 0.7;
-}
-.cloud{
-    transition-duration: 1s;
-    animation: cloud 5s infinite;
-    animation-direction: alternate-reverse;
-      position: absolute;
 }
 
 .raincloud{
@@ -33,21 +40,24 @@
     height: 100%;
     background-size: cover;
     transition-duration: 2s;
+    overflow: hidden;
 }
 
 .condition{
-    font-size: xx-large;
     color: white;
-    font-size: 5em;
+    font-size: 11em;
+    margin-left: 4rem;
+    margin-top: 1rem;
     }
+
 .city{
     color: white;
-    font-size: x-large
+    font-size: 4rem;
 
 }
 .date{
     color: white;
-    font-size: x-large
+    font-size: 3rem;
 }
 
 .avatar_image{
@@ -62,16 +72,54 @@
 }
 .top{
     position: absolute;
-    padding-top: 43%;
-    padding-left: 19%;
+    padding-top: 38%;
+    padding-left: 36%;
 }
 .bottom{
     position: absolute;
-    padding-top: 70%;
-    padding-left: 15%;
+    padding-top: 48%;
+    padding-left: 34%;
 }
 .head{
     position: absolute;
-    left: 34%;
-    top: 165%;
+    left: 41%;
+    top: 183%;
+}
+#modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: .50;
+    -webkit-opacity: .5;
+    -moz-opacity: .5;
+    filter: alpha(opacity=50);
+    z-index: 1000;
+}
+
+#modal-content {
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    box-shadow: 0 0 20px 0 #222;
+    -webkit-box-shadow: 0 0 20px 0 #222;
+    -moz-box-shadow: 0 0 20px 0 #222;
+    display: none;
+    left: 41%;
+    margin: -120px 0 0 -160px;
+    padding: 10px;
+    position: absolute;
+    top: 59%;
+    width: 32rem;
+    z-index: 1000;
+    font-size: 2.5rem;
+}
+
+
+#modal-background.active, #modal-content.active {
+    display: block;
 }

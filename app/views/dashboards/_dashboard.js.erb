@@ -14,10 +14,20 @@ var warnings = <%= JSON.generate(@warnings).html_safe%>
 window.jQuery = $;
 window.$ = $;
 $( "#avatar_head" ).replaceWith(avatar);
+	//	$("#modal-content,#modal-background").toggleClass("active");
+// this triggers the rain warning
 
 update()
 update_background()
+$(function(){
+	$("#modal-launcher, #modal-background, #modal-close").click(function () {
+		$("#modal-content,#modal-background").toggleClass("active");
+	});
+});
 
+if ( warnings[0] !== null ) {
+		$("#modal-content,#modal-background").toggleClass("active");
+}
 //`${new Date().getHours()}:${new Date().getMinutes()}`
 
 function update(){
@@ -41,12 +51,12 @@ function update(){
 
 function update_clouds(){
  if (forecast[index].weather[0].main == "Clouds") {
-    document.querySelector('.cloud').style.display = "flex"
+    document.querySelector('#clouds').style.display = "flex"
  } else {
-    document.querySelector('.cloud').style.display = "none"
+    document.querySelector('#clouds').style.display = "flex"
  }
  if (forecast[index].weather[0].main == "Rain") {
-    document.querySelector('.raincloud').style.display = "flex"
+    document.querySelector('.raincloud').style.display = "none"  // FIX THIS AFTER DEBUGGING 
  } else {
        document.querySelector('.raincloud').style.display = "none"
  }
@@ -125,7 +135,7 @@ function display_time (hour) {
   console.log(hour)
   const period = +hour < 12 ? 'AM' : 'PM'
   if ( hour > 12 ){
-  hour = hour - 12 
+  hour = hour - 12
   }
   return( `${hour} ${period}`)
 }
