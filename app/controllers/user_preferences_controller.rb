@@ -2,7 +2,6 @@ class UserPreferencesController < ApplicationController
 
     def update
         @user_preference = current_user.user_preference
-        avatar template
         @avatar_templates = AvatarStyle.find_by_id(params['user_preference']['hairstyle'])
         @user_preference.avatar_rendering_string = create_avatar(@user_preference.skin_tone,@avatar_templates)
             if @user_preference.update(preferences_params)
