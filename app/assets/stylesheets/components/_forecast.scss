@@ -3,12 +3,6 @@
   margin: 0;
 }
 
-// html {
-//   font-size: 16px;
-//   text-align: center;
-//   color: #0b0b0b;
-//   font-family: "Cabin", sans-serif;
-// }
 
 ul {
   text-align: left;
@@ -26,35 +20,52 @@ h1 {
 // }
 
 h4 {
-  font-size: 2em;
+  font-size: 1rem;
 }
 
 h3 {
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 #time-overview {
-  font-size: 3rem;
+  font-size: 2rem;
+}
+
+.temp-forecast {
+  font-size: 1rem;
+  color:white;
 }
 
 .left {
-  margin-right: 19rem;
-  margin-top: 1rem;
   color: white;
+  font-size: 0.8rem;
+  margin-right: 18rem;
 }
 
 .right {
-  margin-left: 19rem;
   color: white;
+  font-size: 0.8rem;
+  margin-right: -18rem;
 }
+
 .swiper-wrapper {
   justify-content: space-between;
   display: flex;
 }
 
+.swiper-container {
+  margin-top: 3%;
+}
+
+.time-forecast {
+  font-size: 1rem;
+  color:white;
+}
+
 .feels_like {
   color: white;
 }
+
 .hourly {
   justify-content: center;
   padding: 1em;
@@ -79,7 +90,6 @@ h3 {
   margin: 0 auto;
   width: 74%;
   overflow-x: hidden;
-  margin-bottom: 3rem;
 }
 
 #forecast {
@@ -93,7 +103,7 @@ h3 {
 
 .feels_like {
   color: white;
-  font-size: 3rem;
+  font-size: 1rem;
 }
 
 #currentWeather {
@@ -111,10 +121,9 @@ h3 {
 #parameters {
     overflow: hidden;
     border-radius: 4%;
-    margin-left: 9em;
+    margin-left: 4rem;
     width: 100%;
-    font-size: 1.5rem;
-    padding-top: 1rem;
+    font-size: 1rem;
 }
 
 #parameters ul li {
@@ -126,12 +135,14 @@ h3 {
 #parameters ul {
   width: 33%;
   float: left;
-  font-size: 2em;
+  font-size: 1rem;
 }
 
 .icon {
-  width: 7rem;
+  width: 2rem;
 }
+
+
 @media screen and (max-width: 768px) {
   #wrapper {
     width: 70%;

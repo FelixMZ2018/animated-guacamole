@@ -16,16 +16,20 @@
   <div class="card-product-infos">
     <strong><p class="text-dark"><%= trip.destination %></p></strong>
     <p class="text-dark"><%= trip.trip_start_date %>-<%= trip.trip_end_date %></p>
+    <%#= link_to , method: :delete, class: "delete" ,method: :delete, data: { confirm: 'Are you sure you want to delete' } do %>
+    <i class="fas fa-times"></i>
   </div>
+  <%# end  %>
 </div>
 
 <%end%>
 
 
-  <div class="icon-bar">
-    <a href="/wardrobe"><i class="fas fa-tshirt"></i><p>Wardrobe</p></a>
-    <a href="/trips/new"> <i class="far fa-paper-plane"></i><p>Travel Plan</p></a>
-    <a href="/preferences"><i class="fas fa-user"></i><p>Account</p></a>
+  <div class="icon-bar text-center">
+    <a href="/temperatures/new"><i class="fas fa-temperature-low"></i></a>
+    <a href="/wardrobe"><i class="fas fa-tshirt"></i></a>
+    <a href="/trips/new"> <i class="far fa-paper-plane"></i></a>
+    <a href="/preferences"><i class="fas fa-user"></i></a>
   </div>
 </div>
 
