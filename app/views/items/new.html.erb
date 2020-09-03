@@ -1,6 +1,5 @@
 <br>
-<a class="ml-5" href="/wardrobe"><i class="fas fa-chevron-left"></i></a>
-<div class="container-new text-center">
+<a class="ml-5" href="/wardrobe"><i class="fas fa-chevron-left icon-back"></i></a>
   <div class="container">
     <br>
     <h1 class="text-center text-dark"> Customize your wardrobe </h1>
@@ -15,12 +14,10 @@
         <%= f.input :lowest_temperature, collection: ["freezing", "cold", "just right", "warm", "hot" ], label: "Lowest Temperature"%>
         <%= f.input :highest_temperature, collection: ["freezing", "cold", "just right", "warm", "hot"], label: "Highest Temperature"%>
         <br>
-        <br>
-        <br>
-        <br>
+
         <%= f.submit 'Save', class: 'btn btn-danger m-2 mx-auto d-block' %>
         <% end %>
     </div>
   </div>
-</div>
+
 
