@@ -4,17 +4,19 @@
     background-color: rgba(255, 255, 255, 0.2);
     font-size: 1.5em;
     position: absolute;
+    padding: 1em;
 }
 #dashboard {
     border-radius: 2em;
 }
 .date-description {
     position: absolute;
-    margin-top: -23%;
+    margin-top: -18%;
     margin-left: 28%;
 }
 .time {
   font-size: 2rem;
+  color: white;
 }
 .temp {
   font-size: 3rem;
@@ -22,7 +24,8 @@
   color: white;
 }
 .condition_temp {
-    margin-top: 30%;
+    margin-top: 37%;
+    margin-left: -4%;
 }
 .weather_image{
     width: 60%;
@@ -88,8 +91,8 @@
 }
 .head{
     position: absolute;
-    left: 41%;
-    top: 183%;
+    left: 33%;
+    top: 127%;
 }
 #modal-background {
     display: none;
