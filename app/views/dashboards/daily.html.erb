@@ -1,5 +1,4 @@
-<div id="bg-daily" class="pt-3">
-  <br>
+<div id="bg-daily">
     <a class="left" href="/forecast"><i class="fas fa-chevron-left"></i></a>
     <br>
   <h3 class="text-center"> Daily Forecast</h3>
@@ -12,18 +11,18 @@
   </thead>
   <%@forecast_daily[0..6].each do |forecast|%>
   <tbody>
-      <td><p class="time"><%= Time.at(forecast['dt']).strftime('%A') %></p></td>
+      <td><p class="time-daily"><%= Time.at(forecast['dt']).strftime('%A') %></p></td>
       <td><img class="icon" src='https://openweathermap.org/img/w/<%=forecast['weather'][0]['icon']%>.png'></td>
-      <td><p class="temperature"><%= (forecast['temp']['min']).to_i  %>°C</p></td>
-      <td><p class="temperature"><%= (forecast['temp']['max']).to_i  %>°C</p></td>
+      <td><p class="temperature-daily"><%= (forecast['temp']['min']).to_i  %>°C</p></td>
+      <td><p class="temperature-daily"><%= (forecast['temp']['max']).to_i  %>°C</p></td>
   </tbody>
   <% end %>
 </table>
   <div class="icon-bar">
-    <a href="/temperatures/new"><i class="fas fa-temperature-low"></i><p>Temperature</p></a>
-    <a href="/wardrobe"><i class="fas fa-tshirt"></i><p>Wardrobe</p></a>
-    <a href="/trips/new"> <i class="far fa-paper-plane"></i><p>Travel Plan</p></a>
-    <a href="/preferences"><i class="fas fa-user"></i><p>Account</p></a>
+    <a href="/temperatures/new"><i class="fas fa-temperature-low"></i></a>
+    <a href="/wardrobe"><i class="fas fa-tshirt"></i></a>
+    <a href="/trips/new"> <i class="far fa-paper-plane"></i></a>
+    <a href="/preferences"><i class="fas fa-user"></i></a>
   </div>
 </div>
 

@@ -18,8 +18,8 @@
                 <div class="swiper-slide">
                     <div id="time-overview">
                          <!-- refactor time in to the d controller after were done -->
-                        <p class="time"><%= Time.at(forecast['dt']).strftime('%l%p') %></p>
-                        <p class="temperature"><%= (forecast['temp']).to_i  %>°C</p>
+                        <p class="time-forecast"><%= Time.at(forecast['dt']).strftime('%l%p') %></p>
+                        <p class="temp-forecast"><%= (forecast['temp']).to_i  %>°C</p>
                         <img class="icon" src='https://openweathermap.org/img/w/<%=forecast['weather'][0]['icon']%>.png'>
                     </div>
                 </div>
@@ -28,7 +28,6 @@
             </div>
         </div>
     </div>
-    <br>
 
     <hr>
     <!-- Other weather data -->
@@ -69,10 +68,10 @@
     </div>
 </div>
   <div class="icon-bar text-center">
-    <a href="/temperatures/new"><i class="fas fa-temperature-low"></i><p>Temperature</p></a>
-    <a href="/wardrobe"><i class="fas fa-tshirt"></i><p>Wardrobe</p></a>
-    <a href="/trips/new"> <i class="far fa-paper-plane"></i><p>Travel Plan</p></a>
-    <a href="/preferences"><i class="fas fa-user"></i><p>Account</p></a>
+    <a href="/temperatures/new"><i class="fas fa-temperature-low"></i></a>
+    <a href="/wardrobe"><i class="fas fa-tshirt"></i></a>
+    <a href="/trips/new"> <i class="far fa-paper-plane"></i></a>
+    <a href="/preferences"><i class="fas fa-user"></i></a>
   </div>
 </div>
 
@@ -84,7 +83,7 @@
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 3,
         centeredSlides: true,
-        spaceBetween: 30,
+        spaceBetween: 10,
         grabCursor: true,
         pagination: {
             el: '.swiper-pagination',
