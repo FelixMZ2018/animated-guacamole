@@ -25,7 +25,7 @@ $(function(){
 	});
 });
 
-if ( warnings[0] !== null ) {
+if ( warnings[1].length !== 0 ) {
 		$("#modal-content,#modal-background").toggleClass("active");
 }
 //`${new Date().getHours()}:${new Date().getMinutes()}`
@@ -34,7 +34,7 @@ function update(){
     document.querySelector('.condition').innerText = `${Math.round(forecast[index].temp)}°C`;
     document.querySelector('.date').innerText = days[new Date(forecast[index].dt*1000).getDay()] + ' '  + new Date(forecast[index].dt*1000).getDate() +' ' + months[new Date(forecast[index].dt*1000).getMonth()]
     if (index === 0) {
-    document.querySelector('.time').innerText = `${new Date().getHours()}:${new Date().getMinutes()}`
+    document.querySelector('.time').innerText = `${new Date().toTimeString().slice(0,5)}`
     }else{
     document.querySelector('.time').innerText = display_time(new Date(forecast[index].dt*1000).getHours());
     }
@@ -56,9 +56,9 @@ function update_clouds(){
     document.querySelector('#clouds').style.display = "flex"
  }
  if (forecast[index].weather[0].main == "Rain") {
-    document.querySelector('.raincloud').style.display = "none"  // FIX THIS AFTER DEBUGGING 
+    document.querySelector('.rain_background').style.display = "flex"  // FIX THIS AFTER DEBUGGING 
  } else {
-       document.querySelector('.raincloud').style.display = "none"
+       document.querySelector('.rain_background').style.display = "none"
  }
 }
 forecast_element = document.querySelector('#dashboard')

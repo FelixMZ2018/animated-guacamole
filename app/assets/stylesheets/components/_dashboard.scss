@@ -4,25 +4,31 @@
     background-color: rgba(255, 255, 255, 0.2);
     font-size: 1.5em;
     position: absolute;
+    padding: 1em;
 }
 #dashboard {
     border-radius: 2em;
 }
 .date-description {
     position: absolute;
-    margin-top: -23%;
+    margin-top: -18%;
     margin-left: 28%;
 }
 .time {
   font-size: 2rem;
-}
-.temp {
-  font-size: 3rem;
-  margin-left: 3rem;
   color: white;
 }
+//.temp {
+//  font-size: 3rem;
+//  margin-left: 3rem;
+//  color: white;
+//}
 .condition_temp {
-    margin-top: 30%;
+    margin-top: 34%;
+    margin-left: 8%;
+    color: white;
+    font-size: 1em;
+    text-align: initial
 }
 .weather_image{
     width: 60%;
@@ -48,14 +54,14 @@
     transition-duration: 2s;
     overflow: hidden;
 }
-
-.condition{
-    color: white;
-    font-size: 4rem;
-    margin-left: -3rem;
-    margin-top: -3rem;
-    }
-
+//
+//.condition{
+//    color: white;
+//    font-size: 4rem;
+//    margin-left: -3rem;
+//    margin-top: -3rem;
+//    }
+//
 .city{
     color: white;
     font-size: 2rem;
@@ -88,8 +94,8 @@
 }
 .head{
     position: absolute;
-    left: 41%;
-    top: 183%;
+    left: 33%;
+    top: 127%;
 }
 #modal-background {
     display: none;

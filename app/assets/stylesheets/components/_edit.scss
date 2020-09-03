@@ -1,19 +1,19 @@
-#user_preference_skin_tone {
-  color: black;
-  font-size: 2.5rem;
-  padding: 0rem;
-}
+// #user_preference_skin_tone {
+//   color: black;
+//   font-size: 1rem;
+//   padding: 0rem;
+// }
 
 h5 {
-  font-size: 2.5rem;
+  font-size: 1rem;
 }
 
-#user_preference_name, #user_preference_address {
-  font-size: 2.5rem;
-}
+// #user_preference_name, #user_preference_address {
+//   font-size: 1rem;
+// }
 
 #user_preference_temp_br1, #user_preference_temp_br2, #user_preference_temp_br3, #user_preference_temp_br4{
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .container-edit {
@@ -21,11 +21,17 @@ h5 {
   height: 100vh;
   width: 100%;
   background-color: white;
+  overflow: scroll;
 }
+// label {
+//     display: inline-block;
+//     margin-bottom: 1.5rem;
+//     font-size: 1.5rem;
+//   }
 
 .container-edit h3 {
   color:black;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 .container-login {

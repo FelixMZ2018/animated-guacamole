@@ -1,17 +1,14 @@
 <div class="container-edit">
   <a class="ml-3" href="/dashboards"><i class="fas fa-chevron-left"></i></a>
   <div class="container">
+    <br>
     <h3 class="text-center">Edit your profile</h3>
     <br>
     <%= simple_form_for @user_preference do |f| %>
       <%= f.input :name, label: "Name"%>
       <%= f.input :address, label: "Your location"%>
-      <%#= f.input :avatar, label: "Choose your avatar", as: :radio_buttons, collection: [['female', 'female'], ['male', 'male']], label_method: :second, value_method: :first %>
-      <br>
-      <br>
       <%= f.input :hairstyle, label: "Choose your Hairstyle", collection: @avatar_templates %>
       <%= f.input :skin_tone , collection: [['#c58c85', 'Beige-Albâtre'], ['#ecbcb4', 'Beige-Rosé'], ['#d1a3a4', 'Lys-Rosé'], ['#a1665e', 'Sable-Beige'], ['#592f2a', 'Santal'], ['#503335', 'Ambré']], label_method: :second, value_method: :first %>
-      <br>
       <br>
       <h3 class="text-center">Temperature</h3>
       <h5 class="text-center">Set your personal preference for each temperature range</h5>
@@ -21,12 +18,7 @@
       <%= f.input :temp_br3, label: "Warm:"%>
       <%= f.input :temp_br4, label: "Very hot"%>
       <br>
-      <br>
-      <br>
       <%= f.button :submit, "Save", class: "btn btn-danger mx-auto d-block mb-2"%>
-      <br>
-      <br>
-      <br>
      <%end%>
   </div>
 </div>
