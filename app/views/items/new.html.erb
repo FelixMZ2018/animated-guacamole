@@ -6,13 +6,17 @@
     <h1 class="text-center text-dark"> Customize your wardrobe </h1>
 
     <div class="m-3">
-
+<br>
+<br>
 <!--         <p class="text-dark h6">Add an Item </p> -->
         <%= simple_form_for @item do |f| %>
         <%= f.association :wardrobe_template, label_method: :category, label: "Wardrobe Items:"%>
         <%= f.input :color, collection: ["black","white","grey", "pink"]%>
         <%= f.input :lowest_temperature, collection: ["freezing", "cold", "just right", "warm", "hot" ], label: "Lowest Temperature"%>
         <%= f.input :highest_temperature, collection: ["freezing", "cold", "just right", "warm", "hot"], label: "Highest Temperature"%>
+        <br>
+        <br>
+        <br>
         <br>
         <%= f.submit 'Save', class: 'btn btn-danger m-2 mx-auto d-block' %>
         <% end %>

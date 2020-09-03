@@ -1,71 +1,24 @@
 <!-- <a href="/users/sign_out"><i class="fas fa-sign-out-alt m-3"></i></a>
 <%= link_to "logout", destroy_user_session_path %> -->
 
-<div class="vertical-form-container">
-  <div class="vertical-form">
-    <div class="step active text-center">
-      <div class="title">Mar°C</div>
-    <!--   <div class="content"> -->
-      <h7>Your most accurate weather forecast in one place</h7>
-      <br>
+<div class="home-container">
 
-      <!-- <h8>Manage your personal preference</h8>
-      <h8> for each temperature range</h8> -->
+      <h1 class="title"> Mar°C</h1>
+      <h7 class="subtitle">Your most accurate weather forecast</h7><br>
+      <h9> in one place</h9>
+      <br>
         <br>
         <br>
         <div>
           <%= link_to "Get started", new_user_registration_path, class: "btn-home" %>
           <br>
           <br>
+          <br>
+          <br>
+
           <%= link_to "Login", new_user_session_path,class: "link" %>
        </div>
-    <!--   </div> -->
-    </div>
-  </div>
+
 </div>
 
-   <!--  <div class="step step-2 next">
-      <div class="title">Create your Profile</div>
-      <div class="content">
-        <p>You can make changes in settings</p>
-        <div class="col-sm d-flex">
-          <div class="row">
-            <%= image_tag("woman.svg", :alt => "woman", class: "avatar-img") %>
-          </div>
-          <div class="row">
-            <%= image_tag("man.svg", :alt => "man", class: "avatar-img") %>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="step step-3 next text-center">
-      <div class="title">Allow location access</div>
-      <br>
-        <div class="content text-center">
-          <%= image_tag("location.svg", :alt => "location") %>
-          <br>
-          <br>
-          <p>Allow Mar℃ to use your current location to deliver notifications for your personalized weather forcast.</p>
-          <br>
-          <button type="button" class="btn btn-light">Yes</button>
-          <br>
-          <br>
-          <p class="pt-2">No</p>
-        </div>
-    </div>
-
-    <div class="step step-4 next text-center">
-      <div class="title">Set the notification time</div>
-    </div>
-
-    <div class="step step-5 text-center">
-      <div class="title">Temperatur</div>
-      <p>Set your personal preference for each temperature range</p>
-      <div class="temperature-set">
-      </div>
-    </div>
-
-    <i class="material-icons">Continue</i>
-    </div>
-  </div> -->

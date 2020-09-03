@@ -1,10 +1,23 @@
-.date-description {
-  position: absolute;
-  margin-top: 8rem;
-  margin-left: 5rem;
+.greeting {
+  margin-top: 54rem;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 3em;
 }
 
-
+.date-description {
+  position: absolute;
+  margin-top: 23rem;
+  margin-left: 18rem;
+}
+.time {
+  font-size: 3rem;
+}
+.temp {
+  font-size: 3rem;
+  margin-left: 3rem;
+  color: white;
+}
 .weather_image{
     width: 60%;
     justify-content: center;
@@ -31,18 +44,20 @@
 }
 
 .condition{
-    font-size: xx-large;
     color: white;
-    font-size: 5em;
+    font-size: 11em;
+    margin-left: 4rem;
+    margin-top: 1rem;
     }
+
 .city{
     color: white;
-    font-size: x-large
+    font-size: 4rem;
 
 }
 .date{
     color: white;
-    font-size: x-large
+    font-size: 3rem;
 }
 
 .avatar_image{
@@ -57,18 +72,18 @@
 }
 .top{
     position: absolute;
-    padding-top: 43%;
-    padding-left: 19%;
+    padding-top: 38%;
+    padding-left: 36%;
 }
 .bottom{
     position: absolute;
-    padding-top: 70%;
-    padding-left: 15%;
+    padding-top: 48%;
+    padding-left: 34%;
 }
 .head{
     position: absolute;
-    left: 34%;
-    top: 165%;
+    left: 41%;
+    top: 183%;
 }
 #modal-background {
     display: none;
