@@ -11,10 +11,10 @@ noUiSlider.create(range, {
 
 
     range: {
-        'min': 10,
+        'min': -10,
         '25%': 15,
         '50%': 25,
-        'max':30
+        'max':40
     },
 
     step: 1,
@@ -79,6 +79,13 @@ var diffDivs = [
 // });
   }
 }
+const changeLabels = () => {
+let cats = ['Freezing', 'Cold', 'Warm', 'Hot']
+const range = document.querySelector('#range')
+if (range) {
+  document.querySelectorAll('.noUi-value').forEach((label, i) => label.innerHTML = cats[i]);
+  }
+}
 
 
   const submitValues = () => {
@@ -98,7 +105,7 @@ var diffDivs = [
     });
   }
 }
-export { temperatureSlider, submitValues };
+export { temperatureSlider, submitValues , changeLabels };
 
 
 

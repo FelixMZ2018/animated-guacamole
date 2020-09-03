@@ -31,6 +31,8 @@ require("channels")
 import "bootstrap";
 import { temperatureSlider } from '../plugins/init_noUiSlider';
 import { submitValues } from '../plugins/init_noUiSlider';
+import { changeLabels } from '../plugins/init_noUiSlider';
+
 import 'nouislider';
 import 'nouislider/distribute/nouislider.css';
 import "../plugins/flatpickr"
@@ -47,6 +49,7 @@ document.addEventListener('turbolinks:load', () => {
 //
 submitValues();
 temperatureSlider();
+changeLabels();
 //
 //  $('i').on('click', function(){
 //
