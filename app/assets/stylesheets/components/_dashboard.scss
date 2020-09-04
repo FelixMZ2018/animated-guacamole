@@ -5,7 +5,7 @@
     font-size: 1.5em;
     position: absolute;
     padding: 1em;
-    text-shadow: 1px 1px #717d8a3b;
+    text-shadow: 1px 3px #717d8a3b;
     width: 100%;
     transition: 0.5s;
 }
@@ -14,8 +14,8 @@
 }
 .date-description {
     position: absolute;
-    margin-top: -18%;
-    margin-left: 28%;
+    margin-top: -13%;
+    margin-left: 31%;
 }
 .time {
   font-size: 2rem;
@@ -57,12 +57,16 @@
     transition-duration: 2s;
     overflow: hidden;
 }
+
+h10 {
+  font-size: 3rem;
+}
 //
 // .condition h1 {
-//    color: white;
-//    font-size: 4rem;
-//    // margin-left: -3rem;
-//    // margin-top: -3rem;
+// //    color: white;
+//    font-size: 3rem;
+// //    // margin-left: -3rem;
+// //    // margin-top: -3rem;
 //    }
 // //
 .city{
@@ -97,8 +101,8 @@
 }
 .head{
     position: absolute;
-    left: 33%;
-    top: 127%;
+    left: 32%;
+    top: 123%;
 }
 #modal-background {
     display: none;
