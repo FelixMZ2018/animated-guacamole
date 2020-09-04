@@ -10,14 +10,6 @@
       <%= f.input :hairstyle, label: "Choose your Hairstyle", collection: @avatar_templates %>
       <%= f.input :skin_tone , collection: [['#ecbcb4', 'Light'], ['#a1665e', 'Medium'], ['#503335', 'Dark']], label_method: :second, value_method: :first %>
       <br>
-      <h3 class="text-center">Temperature</h3>
-      <h5 class="text-center">Set your personal preference for each temperature range</h5>
-      <br>
-      <%= f.input :temp_br1, label: "Freezing"%>
-      <%= f.input :temp_br2, label: "Cold:"%>
-      <%= f.input :temp_br3, label: "Warm:"%>
-      <%= f.input :temp_br4, label: "Very hot"%>
-      <br>
       <%= f.button :submit, "Save", class: "btn btn-danger mx-auto d-block mb-2"%>
      <%end%>
   </div>
