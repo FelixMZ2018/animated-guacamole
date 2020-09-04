@@ -1,6 +1,4 @@
 document.addEventListener('turbolinks:load', () => {
-window.jQuery = $;
-window.$ = $;
 });
 var weather_messages = update_message()
 var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -11,8 +9,7 @@ var outfits = <%= JSON.generate(@outfits).html_safe%>
 var avatar = <%= JSON.generate(@user_preferences.avatar_rendering_string).html_safe%>
 var warnings = <%= JSON.generate(@warnings).html_safe%>
 /// const forecast = document.querySelector('#storageElement');
-window.jQuery = $;
-window.$ = $;
+
 $( "#avatar_head" ).replaceWith(avatar);
 	//	$("#modal-content,#modal-background").toggleClass("active");
 // this triggers the rain warning
@@ -21,15 +18,15 @@ update_background()
 update_sky();
 var message_array = update_message()
 personal_greeting()
-$(function(){
-	$("#modal-launcher, #modal-background, #modal-close").click(function () {
-		$("#modal-content,#modal-background").toggleClass("active");
-	});
-});
-
-if ( warnings[1].length !== 0 ) {
-		$("#modal-content,#modal-background").toggleClass("active");
-}
+//$(function(){
+//	$("#modal-launcher, #modal-background, #modal-close").click(function () {
+//		$("#modal-content,#modal-background").toggleClass("active");
+//	});
+//});
+//
+//if ( warnings[1].length !== 0 ) {
+//		$("#modal-content,#modal-background").toggleClass("active");
+//}
 //`${new Date().getHours()}:${new Date().getMinutes()}`
 
 function update(){
@@ -45,14 +42,16 @@ function update(){
     update_sky()
     update_clouds();
     update_background();
-        update_sky()
-        personal_greeting()
+    update_sky()
+    personal_greeting()
 
     console.log(forecast[index].condition);
-    $( "#Wardrobe_top" ).replaceWith( outfits[forecast[index].condition].top);
-    $( "#Wardrobe_bottom" ).replaceWith( outfits[forecast[index].condition].bottom);
+    $( ".top" ).html( outfits[forecast[index].condition].top);
+    $( ".bottom" ).html( outfits[forecast[index].condition].bottom);
 
 }
+
+
 
 function update_sky(){
   var hour =  new Date(forecast[index].dt*1000).getHours()
