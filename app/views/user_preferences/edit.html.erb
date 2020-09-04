@@ -12,6 +12,9 @@
       <br>
       <%= f.button :submit, "Save", class: "btn btn-danger mx-auto d-block mb-2"%>
      <%end%>
+     <br>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn btn-danger mx-auto d-block mb-2") %>        
+
   </div>
 </div>
 
