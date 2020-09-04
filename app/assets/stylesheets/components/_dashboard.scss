@@ -152,6 +152,7 @@ width: 60%;
 margin-left: 67%;
 animation: auto;
 animation: spin 8s linear infinite;
+visibility: hidden;
 }
 
 @keyframes spin { 100% {transform:rotate(360deg); } }
@@ -162,4 +163,5 @@ animation: spin 8s linear infinite;
     width: 60%;
     margin-left: 67%;
     transition: 2s;
+    visibility: hidden;
 }
