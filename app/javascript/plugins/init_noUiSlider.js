@@ -1,6 +1,7 @@
 import noUiSlider from 'nouislider';
 import 'nouislider/distribute/nouislider.css';
 
+
 const temperatureSlider = () => {
 var range = document.getElementById('range');
 if (range) {
@@ -104,7 +105,7 @@ if (range) {
     const submit = document.querySelector('#submit-temperature');
     if (submit) {
     submit.addEventListener('click', (event) => {
-      $("#modal-content-slider,#modal-background-slider").toggleClass("active");
+      $("#modal-content-slider").toggleClass("active");
 
     const range = document.getElementById('range');
     const data = range.noUiSlider.get();

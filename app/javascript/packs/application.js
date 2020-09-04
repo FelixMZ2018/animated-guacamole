@@ -32,13 +32,13 @@ import "bootstrap";
 import { temperatureSlider } from '../plugins/init_noUiSlider';
 import { submitValues } from '../plugins/init_noUiSlider';
 import { changeLabels } from '../plugins/init_noUiSlider';
-import { initSlider } from '../plugins/init_slider';
+import { initSlider } from '../plugins/init_slider'
 import 'nouislider';
 import 'nouislider/distribute/nouislider.css';
 import "../plugins/flatpickr"
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initSlider } from '../plugins/init_slider';
+// import { initSlider } from '../plugins/init_slider';
 import { allowLocation } from '../components/allow_location';
 window.jQuery = $;
 window.$ = $;
