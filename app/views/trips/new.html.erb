@@ -21,12 +21,12 @@
         <%= simple_form_for [@trip] do |f| %>
           <%= f.error_notification %>
 
-          <%= f.input :destination, label: "Your travel destination", placeholder: "Enter a city" %>
+          <%= f.input :destination, label: "Your travel destination", placeholder: "Enter a city",input_html: {required: true} %>
     <br>
       <h1>Travel dates</h1>
       <br>
-          <%= f.input :trip_start_date, label: "Starts", as: :date, required: true, input_html: {class: "datepicker"}, placeholder: "Select date"%>
-          <%= f.input :trip_end_date, label: "Ends", as: :date, required: true, input_html: {class: "datepicker"}, placeholder: "Select date"%>
+          <%= f.input :trip_start_date, label: "Starts", as: :date, required: true, input_html: {class: "datepicker",required: true}, placeholder: "Select date"%>
+          <%= f.input :trip_end_date, label: "Ends", as: :date, required: true, input_html: {class: "datepicker",  required: true}, placeholder: "Select date"%>
       <br>
           <%= f.submit 'Save', class: 'btn btn-danger mx-auto d-block mt-2' %>
         <%end%>
