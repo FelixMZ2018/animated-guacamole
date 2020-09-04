@@ -8,6 +8,10 @@
   justify-content: flex-start;
   text-align: center;
   padding-top: 1em;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
 }
 
 .time-daily{
@@ -40,6 +44,7 @@ h3 {
 
 thead p {
   color: white;
+  font-size: 1.5rem;
 }
 .table {
 width: 94%;

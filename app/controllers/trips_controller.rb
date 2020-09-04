@@ -1,15 +1,15 @@
 class TripsController < ApplicationController
 
-  def new 
+  def new
     @user = current_user
     @user_preferences = UserPreference.find_by_id(@user.user_preference.id)
-    
+
     if Trip.where(user_preference_id: @user_preferences.id).empty?
     @trip = Trip.new
     else redirect_to trips_path
     end
 
-    
+
   end
 
   def create
@@ -36,7 +36,7 @@ class TripsController < ApplicationController
     @trip.destroy
     redirect_to dashboards_path
   end
-  
+
 
   private
 

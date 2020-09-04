@@ -27,12 +27,9 @@ h3 {
   font-size: 2rem;
 }
 
-#time-overview {
-  font-size: 2rem;
-}
 
 .temp-forecast {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color:white;
 }
 
@@ -58,7 +55,7 @@ h3 {
 }
 
 .time-forecast {
-  font-size: 1rem;
+  font-size: 1.5rem;
   color:white;
 }
 
@@ -82,6 +79,10 @@ h3 {
   text-align: center;
   padding: 0 20px;
   overflow-x: hidden;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-top-left-radius: 2rem;
 }
 
 
@@ -103,7 +104,7 @@ h3 {
 
 .feels_like {
   color: white;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 #currentWeather {
@@ -123,13 +124,14 @@ h3 {
     border-radius: 4%;
     margin-left: 4rem;
     width: 100%;
-    font-size: 1rem;
+    // font-size: 1rem;
 }
 
 #parameters ul li {
   padding-bottom: 7px;
   line-height: 1.7;
   color: white;
+  font-size: 1.2rem;
 }
 
 #parameters ul {
@@ -143,19 +145,19 @@ h3 {
 }
 
 
-@media screen and (max-width: 768px) {
-  #wrapper {
-    width: 70%;
-  }
-}
+// @media screen and (max-width: 768px) {
+//   #wrapper {
+//     width: 70%;
+//   }
+// }
 
-@media screen and (max-width: 480px) {
-  #wrapper {
-    width: 95%;
-  }
+// @media screen and (max-width: 480px) {
+//   #wrapper {
+//     width: 95%;
+//   }
 
-  #forecast {
-    font-size: 75px;
-  }
-}
+//   #forecast {
+//     font-size: 75px;
+//   }
+// }
 
