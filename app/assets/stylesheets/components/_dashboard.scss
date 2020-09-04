@@ -144,7 +144,7 @@ h10 {
     display: block;
 }
 #sun {
-    transition: 2s ;
+    transition: 1s ;
 
 position: absolute;
 margin-top: -33%;
@@ -162,6 +162,5 @@ visibility: hidden;
     margin-top: -33%;
     width: 60%;
     margin-left: 67%;
-    transition: 2s;
     visibility: hidden;
-}
+    transition: 1s}
