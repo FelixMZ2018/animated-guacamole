@@ -9,6 +9,7 @@ var breakpoints_values = range.dataset.breakpoints.split(",").map(b => parseInt(
 
 noUiSlider.create(range, {
 
+    margin: 1,
 
     range: {
         'min': -10,
@@ -23,7 +24,6 @@ noUiSlider.create(range, {
     start: breakpoints_values,
 
     // ... must be at least 300 apart
-    margin: 10,
 
     // ... but no more than 600
     // limit: 600,
@@ -92,6 +92,8 @@ if (range) {
     const submit = document.querySelector('#submit-temperature');
     if (submit) {
     submit.addEventListener('click', (event) => {
+      $("#modal-content-slider,#modal-background-slider").toggleClass("active");
+
     const range = document.getElementById('range');
     const data = range.noUiSlider.get();
     fetch('/temperatures/new', {
@@ -105,6 +107,12 @@ if (range) {
     });
   }
 }
+
+$(function(){
+	$("#modal-launcher-slider, #modal-background-slider, #modal-close-slider").click(function () {
+		$("#modal-content-slider,#modal-background-slider").toggleClass("active");
+	});
+});
 export { temperatureSlider, submitValues , changeLabels };
 
 

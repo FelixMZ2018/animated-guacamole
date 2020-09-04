@@ -15,7 +15,7 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <%@forecast_hourly[0..12].each do |forecast|%>
-                <div class="swiper-slide">
+                <div class="swiper-slide pl-1 pr-1">
                     <div id="time-overview">
                          <!-- refactor time in to the d controller after were done -->
                         <p class="time-forecast"><%= Time.at(forecast['dt']).strftime('%l%p') %></p>

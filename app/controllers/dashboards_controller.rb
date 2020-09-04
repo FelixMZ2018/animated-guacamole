@@ -21,7 +21,7 @@ class DashboardsController < ApplicationController
         elsif current_date > trips[0].trip_start_date && current_date < trips[0].trip_end_date
           @user_preferences.address = trips[0].destination
           @user_preferences.save
-          sleep(0.2)
+          sleep(1)
         end
       end
       @forecast = api_call
