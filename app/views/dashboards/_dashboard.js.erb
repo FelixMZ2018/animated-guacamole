@@ -73,7 +73,7 @@ function update_sky(){
 }
 
 function update_greeting (){
-  
+
 
 }
 
@@ -82,38 +82,38 @@ function update_clouds(){
   if (forecast[index].clouds <= 76) {
         document.querySelector('#clouds').style.display = "flex"
         document.querySelector('#clouds_2').style.display = "none"
-        document.querySelector('#clouds').style.filter = "brightness(1)" 
-      document.querySelector('#clouds_2').style.filter = "brightness(1)" 
+        document.querySelector('#clouds').style.filter = "brightness(1)"
+      document.querySelector('#clouds_2').style.filter = "brightness(1)"
           document.querySelector('.rain_background').style.display = "none"  // FIX THIS AFTER DEBUGGING  brightness(0.5)
 
 } else {
         document.querySelector('#clouds').style.display = "flex"
         document.querySelector('#clouds_2').style.display = "flex"
-                document.querySelector('#clouds').style.filter = "brightness(1)" 
-      document.querySelector('#clouds_2').style.filter = "brightness(1)" 
-    document.querySelector('.rain_background').style.display = "none"  // FIX THIS AFTER DEBUGGING 
+                document.querySelector('#clouds').style.filter = "brightness(1)"
+      document.querySelector('#clouds_2').style.filter = "brightness(1)"
+    document.querySelector('.rain_background').style.display = "none"  // FIX THIS AFTER DEBUGGING
  }}
  if (forecast[index].weather[0].main == "Rain") {
     document.querySelector('.rain_background').style.display = "flex"  // FIX THIS AFTER DEBUGGING  brightness(0.5)
-    document.querySelector('#clouds').style.display = "flex" 
-    document.querySelector('#clouds_2').style.display = "flex" 
-    document.querySelector('#clouds').style.filter = "brightness(0.5)" 
-    document.querySelector('#clouds_2').style.filter = "brightness(0.5)" 
+    document.querySelector('#clouds').style.display = "flex"
+    document.querySelector('#clouds_2').style.display = "flex"
+    document.querySelector('#clouds').style.filter = "brightness(0.5)"
+    document.querySelector('#clouds_2').style.filter = "brightness(0.5)"
 
  }
   if (forecast[index].weather[0].main == "Clear") {
-    document.querySelector('.rain_background').style.display = "none"  // FIX THIS AFTER DEBUGGING 
-    document.querySelector('#clouds').style.display = "none"  // FIX THIS AFTER DEBUGGING 
-        document.querySelector('#clouds_2').style.display = "none"  // FIX THIS AFTER DEBUGGING 
+    document.querySelector('.rain_background').style.display = "none"  // FIX THIS AFTER DEBUGGING
+    document.querySelector('#clouds').style.display = "none"  // FIX THIS AFTER DEBUGGING
+        document.querySelector('#clouds_2').style.display = "none"  // FIX THIS AFTER DEBUGGING
 
  }}
 
 function update_message(){
  const messages = {}
-messages['freezing'] = ["It’s Arctic out there.","You can see your breath in the air.","It’s freezing out today. Do you think it will snow?","Cold as F."]
- messages['cold'] = ["It’s cold!", "Not exactly warm out there,maybe stay inside","It´s a gray bucket of suck outside."]
+  messages['freezing'] = ["The snowman begs you to take him inside at night.","This weather is almost colder than my heart.","Sorry this weather is requiring you to powder your balls in real time.", "It’s Arctic out there.","You can see your breath in the air.","It’s freezing out today. Do you think it will snow?","Cold as F."]
+  messages['cold'] = ["It’s cold!", "Not exactly warm out there,maybe stay inside","It´s a gray bucket of suck outside.","In the cold dark days of the winter, dream about the flowers to get warmed up!", "The cold cut like a many bladed knife.", "Nothing burns like the cold."]
   messages['average'] = ["It’s nice and warm today.","It’s nice in the sun.","The weather’s lovely.","It’s a lovely day.","Did you order this sunshine?","It’s so nice out today, isn’t it?","The weather’s nice today, right?","Perfect day to ride a unicorn."]
-  messages['hot'] = ["It’s pretty hot, isn’t it?","It’s absolutely boiling!","It’s positively tropical today.","OMG its so hot. Who the hell even needs clothes today."]
+  messages['hot'] = ["It’s pretty hot, isn’t it?","It’s absolutely boiling!","It’s positively tropical today.","OMG its so hot. Who the hell even needs clothes today.", "It’s a smile, it’s a kiss, it’s a sip of wine … it’s summertime!","Let us dance in the sun, wearing wild flowers in our hair"]
   messages['rain'] = ["It’s pouring.","It’s bucketing down.","Looks like rain.","I’m soaked to the skin.","Can you believe all of this rain we’ve been having?","Like R. Kelly, the clouds want to piss on you."]
   return messages
 }
@@ -142,7 +142,7 @@ document.querySelector('.greeting_message').style.opacity = 1
 // ["freezing", "cold", "just right", "warm", "hot"]
 
 // if (forecast[index].weather[0].main == "Clear") {
-//    document.querySelector('.rain_background').style.display = "none"  // FIX THIS AFTER DEBUGGING 
+//    document.querySelector('.rain_background').style.display = "none"  // FIX THIS AFTER DEBUGGING
 // } else {
 //       document.querySelector('.rain_background').style.display = "none"
 // }}
