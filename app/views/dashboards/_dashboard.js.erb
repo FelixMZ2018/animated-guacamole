@@ -2,7 +2,7 @@ document.addEventListener('turbolinks:load', () => {
 window.jQuery = $;
 window.$ = $;
 });
-
+var weather_messages = update_message()
 var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 var forecast = <%= JSON.generate(@forecast_hourly).html_safe%>
@@ -16,9 +16,11 @@ window.$ = $;
 $( "#avatar_head" ).replaceWith(avatar);
 	//	$("#modal-content,#modal-background").toggleClass("active");
 // this triggers the rain warning
-
 update()
 update_background()
+update_sky();
+var message_array = update_message()
+personal_greeting()
 $(function(){
 	$("#modal-launcher, #modal-background, #modal-close").click(function () {
 		$("#modal-content,#modal-background").toggleClass("active");
@@ -40,27 +42,110 @@ function update(){
     }
     display_time(new Date(forecast[index].dt*1000).getHours())
     document.querySelector('.temp').innerText = `${forecast[index].weather[0].description}`;
-    update_clouds();
+    update_sky()
     update_clouds();
     update_background();
+        update_sky()
+        personal_greeting()
+
     console.log(forecast[index].condition);
     $( "#Wardrobe_top" ).replaceWith( outfits[forecast[index].condition].top);
     $( "#Wardrobe_bottom" ).replaceWith( outfits[forecast[index].condition].bottom);
 
 }
 
+function update_sky(){
+  var hour =  new Date(forecast[index].dt*1000).getHours()
+   if (forecast[index].weather[0].main == "Clear") {
+    switch (true) {
+  case hour > 20 || hour < 8 :
+    document.querySelector('#sun').style.visibility = "hidden";
+    document.querySelector('#moon').style.visibility = "initial";
+       break;
+  case hour >= 8 && hour <= 20:
+    document.querySelector('#sun').style.visibility = "initial";
+    document.querySelector('#moon').style.visibility = "hidden";
+        break;
+       }} else {
+       document.querySelector('#sun').style.visibility = "hidden";
+    document.querySelector('#moon').style.visibility = "hidden";
+    }
+}
+
+function update_greeting (){
+  
+
+}
+
 function update_clouds(){
  if (forecast[index].weather[0].main == "Clouds") {
-    document.querySelector('#clouds').style.display = "flex"
- } else {
-    document.querySelector('#clouds').style.display = "flex"
- }
+  if (forecast[index].clouds <= 76) {
+        document.querySelector('#clouds').style.display = "flex"
+        document.querySelector('#clouds_2').style.display = "none"
+        document.querySelector('#clouds').style.filter = "brightness(1)" 
+      document.querySelector('#clouds_2').style.filter = "brightness(1)" 
+          document.querySelector('.rain_background').style.display = "none"  // FIX THIS AFTER DEBUGGING  brightness(0.5)
+
+} else {
+        document.querySelector('#clouds').style.display = "flex"
+        document.querySelector('#clouds_2').style.display = "flex"
+                document.querySelector('#clouds').style.filter = "brightness(1)" 
+      document.querySelector('#clouds_2').style.filter = "brightness(1)" 
+    document.querySelector('.rain_background').style.display = "none"  // FIX THIS AFTER DEBUGGING 
+ }}
  if (forecast[index].weather[0].main == "Rain") {
-    document.querySelector('.rain_background').style.display = "flex"  // FIX THIS AFTER DEBUGGING 
- } else {
-       document.querySelector('.rain_background').style.display = "none"
+    document.querySelector('.rain_background').style.display = "flex"  // FIX THIS AFTER DEBUGGING  brightness(0.5)
+    document.querySelector('#clouds').style.display = "flex" 
+    document.querySelector('#clouds_2').style.display = "flex" 
+    document.querySelector('#clouds').style.filter = "brightness(0.5)" 
+    document.querySelector('#clouds_2').style.filter = "brightness(0.5)" 
+
  }
+  if (forecast[index].weather[0].main == "Clear") {
+    document.querySelector('.rain_background').style.display = "none"  // FIX THIS AFTER DEBUGGING 
+    document.querySelector('#clouds').style.display = "none"  // FIX THIS AFTER DEBUGGING 
+        document.querySelector('#clouds_2').style.display = "none"  // FIX THIS AFTER DEBUGGING 
+
+ }}
+
+function update_message(){
+ const messages = {}
+messages['freezing'] = ["It’s Arctic out there.","You can see your breath in the air.","It’s freezing out today. Do you think it will snow?","Cold as F."]
+ messages['cold'] = ["It’s cold!", "Not exactly warm out there,maybe stay inside","It´s a gray bucket of suck outside."]
+  messages['average'] = ["It’s nice and warm today.","It’s nice in the sun.","The weather’s lovely.","It’s a lovely day.","Did you order this sunshine?","It’s so nice out today, isn’t it?","The weather’s nice today, right?","Perfect day to ride a unicorn."]
+  messages['hot'] = ["It’s pretty hot, isn’t it?","It’s absolutely boiling!","It’s positively tropical today.","OMG its so hot. Who the hell even needs clothes today."]
+  messages['rain'] = ["It’s pouring.","It’s bucketing down.","Looks like rain.","I’m soaked to the skin.","Can you believe all of this rain we’ve been having?","Like R. Kelly, the clouds want to piss on you."]
+  return messages
 }
+
+function personal_greeting(){
+document.querySelector('.greeting_message').style.opacity = 0
+switch (true) {
+case forecast[index].weather[0].main == "Rain" :
+document.querySelector('.greeting_message').innerText = weather_messages['rain'][Math.floor(Math.random() *  weather_messages['rain'].length)];
+break;
+  case [forecast[index].condition] == "hot" :
+document.querySelector('.greeting_message').innerText = weather_messages['hot'][Math.floor(Math.random() *  weather_messages['hot'].length)];
+break;
+  case [forecast[index].condition] == "freezing":
+document.querySelector('.greeting_message').innerText = weather_messages['freezing'][Math.floor(Math.random() *  weather_messages['freezing'].length)];
+break;
+  case [forecast[index].condition] == "cold":
+document.querySelector('.greeting_message').innerText = weather_messages['cold'][Math.floor(Math.random() *  weather_messages['cold'].length)];
+break;
+ case [forecast[index].condition] == "just right" || [forecast[index].condition] == "warm" :
+document.querySelector('.greeting_message').innerText = weather_messages['average'][Math.floor(Math.random() *  weather_messages['average'].length)];
+}
+document.querySelector('.greeting_message').style.opacity = 1
+
+}
+// ["freezing", "cold", "just right", "warm", "hot"]
+
+// if (forecast[index].weather[0].main == "Clear") {
+//    document.querySelector('.rain_background').style.display = "none"  // FIX THIS AFTER DEBUGGING 
+// } else {
+//       document.querySelector('.rain_background').style.display = "none"
+// }}
 forecast_element = document.querySelector('#dashboard')
 forecast_element.addEventListener("touchstart", startTouch, false);
 forecast_element.addEventListener("touchmove", moveTouch, false);
@@ -118,17 +203,20 @@ function update_background() {
    var hour =  new Date(forecast[index].dt*1000).getHours()
    //console.log(hour);
 switch (true) {
-  case hour > 23 || hour < 5 :
+  case hour > 21 || hour < 8 :
     document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('night.svg') %>")';
        break;
-  case hour >= 5 && hour <= 11:
+  case hour >= 8 && hour <= 11:
     document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('day.svg') %>")';
+
         break;
   case hour > 11 && hour <= 17:
     document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('afternoon.svg') %>")';
+
     break;
-  case hour > 18 && hour <= 23:
+  case hour > 18 && hour <= 21:
     document.querySelector('.swiper-box').style.backgroundImage = 'url("<%= asset_path('evening.svg') %>")';
+
 }
 }
 function display_time (hour) {

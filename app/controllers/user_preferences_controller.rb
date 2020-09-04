@@ -1,9 +1,10 @@
 class UserPreferencesController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
     def update
         @user_preference = current_user.user_preference
         @avatar_templates = AvatarStyle.find_by_id(params['user_preference']['hairstyle'])
-        @user_preference.avatar_rendering_string = create_avatar(@user_preference.skin_tone,@avatar_templates)
+         @user_preference.avatar_rendering_string = create_avatar(@user_preference.skin_tone,@avatar_templates)
             if @user_preference.update(preferences_params)
               if @user_preference.address_changed? || @user_preference.latitude_changed?
               @user_preference.city = Geocoder.search(@user_preference.address).first.city
@@ -14,7 +15,7 @@ class UserPreferencesController < ApplicationController
             else
               render :edit
             end
-      end
+        end
 
     def edit
       @user_preference = current_user.user_preference

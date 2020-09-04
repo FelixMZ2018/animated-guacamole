@@ -10,6 +10,17 @@
     /* overflow: hidden; */
 	top: 15%;
 	opacity: 0.9;
+	transition: 5s;
+}
+
+#clouds_2{
+	position: absolute;
+    /* overflow: hidden; */
+	top: 5%;
+	opacity: 0.9;
+	left: -26%;
+	transition: 5s;
+
 }
 
 /*Time to finalise the cloud shape*/
@@ -37,6 +48,7 @@
 	-webkit-transform: rotate(30deg);
 	transform: rotate(30deg);
 }
+
 
 .cloud:after {
 	width: 120px; height: 120px;

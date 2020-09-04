@@ -13,6 +13,10 @@ class TripsController < ApplicationController
   end
 
   def create
+    @user = current_user
+    @user.user_preference.default_address = @user.user_preference.address
+    @user.user_preference.save
+    #Ex:- :default =>''
     @trip = Trip.new(trips_params)
     @user = current_user
     @user_preferences = UserPreference.find_by_id(@user.user_preference.id)
@@ -32,7 +36,12 @@ class TripsController < ApplicationController
   end
 
   def destroy
-    @trip = Trip.where(@params[:id])
+    @user = current_user
+    @user_preferences = UserPreference.find_by_id(@user.user_preference.id)
+    @user.user_preference.address = @user.user_preference.default_address 
+    @user.user_preference.save
+  ##  @user.address = @user
+    @trip = Trip.find_by_id(params[:id])
     @trip.destroy
     redirect_to dashboards_path
   end

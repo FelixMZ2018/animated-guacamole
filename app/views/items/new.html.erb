@@ -7,9 +7,10 @@
 <br>
 <br>
 <!--         <p class="text-dark h6">Add an Item </p> -->
+<% @colors = ["black","white","grey", "pink","crimson","DarkOliveGreen","Gold","LightBlue","Maroon","Navy","PeachPuff","Red","Teal","DarkKhaki"]%>
         <%= simple_form_for @item do |f| %>
         <%= f.association :wardrobe_template, label_method: :category, label: "Wardrobe Items:"%>
-        <%= f.input :color, collection: ["black","white","grey", "pink"]%>
+        <%= f.input :color, collection: @colors %>
         <%= f.input :lowest_temperature, collection: ["freezing", "cold", "just right", "warm", "hot" ], label: "Lowest Temperature"%>
         <%= f.input :highest_temperature, collection: ["freezing", "cold", "just right", "warm", "hot"], label: "Highest Temperature"%>
         <br>
