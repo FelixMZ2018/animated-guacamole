@@ -6,10 +6,9 @@
 <h5 class="text-center">Set your personal preference for each temperature range</h5>
 <div style="height: 100px"></div>
 <div id="range" data-breakpoints = "<%= @breakpoints %>"></div>
-
 <div id="submit-temperature" class="btn btn-danger mx-auto d-block ml-4">Save</div>
 </div>
 </div>
 <div id="modal-content-slider">
-<p> Your preferences have been updated</p>
+<%= link_to "Your preferences have been updated", dashboards_path  %>
 </div>
