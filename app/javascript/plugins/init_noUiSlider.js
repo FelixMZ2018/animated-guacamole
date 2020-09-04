@@ -120,11 +120,6 @@ if (range) {
   }
 }
 
-$(function(){
-	$("#modal-launcher-slider, #modal-background-slider, #modal-close-slider").click(function () {
-		$("#modal-content-slider,#modal-background-slider").toggleClass("active");
-	});
-});
 export { temperatureSlider, submitValues , changeLabels };
 
 
