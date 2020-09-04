@@ -13,8 +13,8 @@
         <%= simple_form_for @item do |f| %>
         <%= f.association :wardrobe_template, label_method: :category, label: "Wardrobe Items:"%>
         <%= f.input :color, collection: @colors %>
-        <%= f.input :lowest_temperature, collection: ["freezing", "cold", "just right", "warm", "hot" ], label: "Lowest Temperature"%>
-        <%= f.input :highest_temperature, collection: ["freezing", "cold", "just right", "warm", "hot"], label: "Highest Temperature"%>
+        <%= f.input :lowest_temperature, collection: ["freezing", "cold", "just right", "warm", "very warm" ], label: "Lowest Temperature"%>
+        <%= f.input :highest_temperature, collection: ["freezing", "cold", "just right", "warm", "very warm"], label: "Highest Temperature"%>
         <br>
 
         <%= f.submit 'Save', class: 'btn btn-danger m-2 mx-auto d-block' %>
