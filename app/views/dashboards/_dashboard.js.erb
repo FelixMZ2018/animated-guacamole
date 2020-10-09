@@ -138,6 +138,26 @@ document.querySelector('.greeting_message').innerText = weather_messages['averag
 document.querySelector('.greeting_message').style.opacity = 1
 
 }
+
+var swiper_element = document.getElementById('dashboard');
+var mc = new Hammer(swiper_element);
+
+mc.on("swipeleft swiperight", function(ev) {
+switch (true) {
+  case ev.type == "swipeleft":
+  console.log("left")
+  if (index + 1 < forecast.length) {
+            index = index + 1
+   update()}
+  break
+  case ev.type == "swiperight":
+    console.log("right")
+  if (index > 1) {
+    index = index - 1
+    update()
+
+
+}}});
 // ["freezing", "cold", "just right", "warm", "hot"]
 
 // if (forecast[index].weather[0].main == "Clear") {
@@ -145,58 +165,58 @@ document.querySelector('.greeting_message').style.opacity = 1
 // } else {
 //       document.querySelector('.rain_background').style.display = "none"
 // }}
-forecast_element = document.querySelector('#dashboard')
-forecast_element.addEventListener("touchstart", startTouch, false);
-forecast_element.addEventListener("touchmove", moveTouch, false);
-
-// Swipe Up / Down / Left / Right
-var initialX = null;
-var initialY = null;
-
-function startTouch(e) {
-  initialX = e.touches[0].clientX;
-  initialY = e.touches[0].clientY;
-};
-
-function moveTouch(e) {
-  if (initialX === null) {
-    return;
-  }
-
-  if (initialY === null) {
-    return;
-  }
-
-  var currentX = e.touches[0].clientX;
-  var currentY = e.touches[0].clientY;
-
-  var diffX = initialX - currentX;
-  var diffY = initialY - currentY;
-
-  if (Math.abs(diffX) > Math.abs(diffY)) {
-    // sliding horizontally
-    if (diffX > 0) {
-      // swiped left
-      //console.log("swiped left");
-          if (index + 1 < forecast.length) {
-            index = index + 1
-    //        console.log(index);
-    //console.log(forecast[index])
-    update()
-    }} else {
-      // swiped right
-      //console.log("swiped right");
-          if (index > 1) {
-            index = index - 1
-    //console.log(forecast[index])
-    update()
-    }}}
-
-  initialX = null;
-  initialY = null;
-
-  e.preventDefault();
-};
+//forecast_element = document.querySelector('#dashboard')
+//forecast_element.addEventListener("touchstart", startTouch, false);
+//forecast_element.addEventListener("touchmove", moveTouch, false);
+//
+//// Swipe Up / Down / Left / Right
+//var initialX = null;
+//var initialY = null;
+//
+//function startTouch(e) {
+//  initialX = e.touches[0].clientX;
+//  initialY = e.touches[0].clientY;
+//};
+//
+//function moveTouch(e) {
+//  if (initialX === null) {
+//    return;
+//  }
+//
+//  if (initialY === null) {
+//    return;
+//  }
+//
+//  var currentX = e.touches[0].clientX;
+//  var currentY = e.touches[0].clientY;
+//
+//  var diffX = initialX - currentX;
+//  var diffY = initialY - currentY;
+//
+//  if (Math.abs(diffX) > Math.abs(diffY)) {
+//    // sliding horizontally
+//    if (diffX > 0) {
+//      // swiped left
+//      //console.log("swiped left");
+//         if (index + 1 < forecast.length) {
+//            index = index + 1
+//    //        console.log(index);
+//    //console.log(forecast[index])
+//    update()
+//    }} else {
+//      // swiped right
+//      //console.log("swiped right");
+//          if (index > 1) {
+//            index = index - 1
+//    //console.log(forecast[index])
+//    update()
+//    }}}
+//
+//  initialX = null;
+//  initialY = null;
+//
+//  e.preventDefault();
+//};
 
 function update_background() {
    var hour =  new Date(forecast[index].dt*1000).getHours()
